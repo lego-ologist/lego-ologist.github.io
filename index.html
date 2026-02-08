@@ -1,10 +1,624 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Lego-ologist Homepage</title>
-  </head>
-  <body>
-    <h1>Welcome for visiting our Lego-ologist home page!</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lego-ologiest Team</title>
+
+  <style>
+    /* =========================
+       Vintage Beige/Brown Theme
+       Inspired by your PPT deck
+       ========================= */
+
+    :root {
+      --paper: #f3ead7; /* warm beige */
+      --paper-2: #efe0c6; /* slightly darker beige */
+      --ink: #3b2a1a; /* dark brown ink */
+      --ink-soft: #5a3f2b; /* softer brown */
+      --line: rgba(59, 42, 26, .18);
+      --line-strong: rgba(59, 42, 26, .28);
+      --accent: #8a5a2b; /* warm accent (brown/orange) */
+      --accent-2: #b07a3a;
+      --card: rgba(255, 255, 255, .38);
+      --card-2: rgba(255, 255, 255, .26);
+      --shadow: 0 10px 30px rgba(50, 30, 10, .12);
+      --radius: 14px;
+    }
+
+    /* Base */
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      line-height: 1.55;
+
+      /* Paper-like background using layered gradients (no image needed) */
+      background: radial-gradient(1200px 800px at 10% 0%, rgba(255, 255, 255, .55), transparent 60%),
+      radial-gradient(900px 700px at 90% 10%, rgba(255, 255, 255, .35), transparent 55%),
+      radial-gradient(900px 900px at 50% 110%, rgba(90, 63, 43, .08), transparent 60%),
+      linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+    }
+
+    /* Header */
+    header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .22);
+      backdrop-filter: blur(6px);
+    }
+
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 30px;
+      letter-spacing: .4px;
+      color: var(--ink);
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 9px 14px;
+      border: 1px solid var(--line-strong);
+      background: rgba(255, 255, 255, .25);
+      cursor: pointer;
+      border-radius: 999px; /* pill */
+      font-size: 14px;
+      color: var(--ink-soft);
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .tab-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, .35);
+      border-color: rgba(138, 90, 43, .35);
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(180deg, rgba(176, 122, 58, .25), rgba(138, 90, 43, .22));
+      color: var(--ink);
+      border-color: rgba(138, 90, 43, .45);
+      box-shadow: 0 6px 18px rgba(50, 30, 10, .12);
+    }
+
+    /* Layout */
+    .layout {
+      display: flex;
+      height: calc(100vh - 120px);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      min-width: 190px;
+      max-width: 460px;
+      padding: 14px;
+      box-sizing: border-box;
+      overflow-y: auto;
+
+      border-right: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .28), rgba(255, 255, 255, .18)),
+      radial-gradient(600px 400px at 30% 0%, rgba(255, 255, 255, .30), transparent 60%);
+    }
+
+    .sidebar h3 {
+      margin: 8px 0 10px;
+      font-size: 16px;
+      letter-spacing: .3px;
+      color: var(--ink);
+    }
+
+    /* TOC */
+    .toc details {
+      margin-bottom: 10px;
+    }
+
+    .toc summary {
+      cursor: pointer;
+      font-weight: 700;
+      padding: 8px 10px;
+      border-radius: 10px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, .18);
+      border: 1px solid rgba(59, 42, 26, .10);
+    }
+
+    .toc a {
+      display: block;
+      padding: 7px 12px;
+      margin: 4px 0;
+      text-decoration: none;
+      color: var(--ink-soft);
+      font-size: 14px;
+      border-radius: 10px;
+      border: 1px dashed transparent; /* sketchy feel */
+    }
+
+    .toc a:hover {
+      background: rgba(255, 255, 255, .22);
+      border-color: rgba(138, 90, 43, .25);
+    }
+
+    .toc a.active {
+      background: rgba(176, 122, 58, .18);
+      color: var(--ink);
+      border: 1px dashed rgba(138, 90, 43, .45);
+    }
+
+    /* Resizer */
+    .resizer {
+      width: 6px;
+      cursor: col-resize;
+      background: linear-gradient(180deg, rgba(59, 42, 26, .06), rgba(59, 42, 26, .16));
+    }
+
+    /* Content */
+    .content {
+      flex: 1;
+      padding: 26px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    /* Sections + headings */
+    section {
+      margin-bottom: 70px;
+    }
+
+    section h2 {
+      margin-top: 0;
+      font-size: 26px;
+      color: var(--ink);
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(138, 90, 43, .35);
+      letter-spacing: .2px;
+    }
+
+    section h3 {
+      margin: 18px 0 10px;
+      color: var(--ink);
+      font-size: 18px;
+    }
+
+    /* Content boxes -> “label cards” */
+    .box,
+    .stats-box {
+      padding: 16px 16px;
+      margin-top: 12px;
+      background: linear-gradient(180deg, var(--card), var(--card-2));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    /* Subtle “sketch border” effect */
+    .box::before,
+    .stats-box::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      /*border-radius: calc(var(--radius) - 6px);*/
+      /*border: 1px dashed rgba(59,42,26,.18);*/
+      pointer-events: none;
+    }
+
+    /* Make stats box look special (you had one in Robotics) */
+    .stats-box {
+      font-weight: 700;
+      color: var(--ink);
+      border-color: rgba(138, 90, 43, .30);
+      background: linear-gradient(180deg, rgba(176, 122, 58, .20), rgba(255, 255, 255, .22));
+    }
+
+    /* Images under Problem Statement (2 across, evenly spaced) */
+    .img-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+
+      /* NEW: keep the image row narrower than the text block */
+      max-width: 800px;
+      margin: 10px; /* centers the grid under the text */
+    }
+
+    /* NEW: stacked images (one per row) */
+    .img-stack {
+      display: grid;
+      grid-template-columns: 1fr; /* one column => stacked */
+      gap: 12px;
+      max-width: 1600px;
+      margin: 14px; /* centers the stack under text */
+    }
+
+    .img-grid-2 img,
+    .img-stack img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 22px rgba(50, 30, 10, .10);
+      object-fit: cover;
+    }
+
+    /* Mobile optimization (keeps your original behavior) */
+    @media (max-width: 768px) {
+      .img-grid-2 {
+        grid-template-columns: 1fr; /* stack on mobile */
+        max-width: 100%;
+      }
+    }
+
+    /* Mobile optimization (keeps your original behavior) */
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .sidebar {
+        width: 100%;
+        max-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+        height: 210px;
+      }
+
+      .resizer {
+        display: none;
+      }
+
+      .content {
+        padding: 16px;
+      }
+    }
+
+    /* --- MOBILE OPTIMIZATION --- */
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: column; /* Stack vertically on iPhone */
+        height: auto;
+      }
+
+      .sidebar {
+        width: 100%;
+        max-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        height: 200px; /* Limit height so content is visible */
+      }
+
+      .resizer {
+        display: none; /* Hide resizer on touch screens */
+      }
+
+      .content {
+        padding: 16px;
+      }
+    }
+
+    section {
+      margin-bottom: 70px;
+    }
+
+    section h2 {
+      border-bottom: 2px solid #000;
+      padding-bottom: 6px;
+    }
+
+    .box {
+      padding: 16px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    /* NEW: Big subsection title like "Identify" */
+    .subsection-title {
+      margin: 28px 0 10px;
+      font-size: 24px;
+      color: var(--ink);
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(138, 90, 43, .28);
+      letter-spacing: .2px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Lego-ologiest Team</h1>
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="innovation">Innovation Project</button>
+    <button class="tab-btn" data-tab="robotics">Robotics Project</button>
+    <button class="tab-btn" data-tab="gamedev">Game Development</button>
+    <button class="tab-btn" data-tab="team">Our Team</button>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div id="innovation-toc">
+      <nav class="toc">
+        <details open>
+          <summary>Identify</summary>
+          <a href="#identify-problem">Problem Statement</a>
+          <a href="#identify-impact">Impact of Misunderstanding</a>
+          <a href="#identify-research">Our Research from Many Sources</a>
+        </details>
+        <details open>
+          <summary>Design</summary>
+          <a href="#design-process">Process</a>
+        </details>
+        <details open>
+          <summary>Create</summary>
+          <a href="#create-features">Features</a>
+          <a href="#create-elements">Game Elements</a>
+        </details>
+
+        <details open>
+          <summary>Iterate</summary>
+          <a href="#iterate-feedback">Expert Feedback</a>
+          <a href="#iterate-improvements">Improvements</a>
+        </details>
+        <details open>
+          <summary>Communicate</summary>
+          <a href="#comm-learning">Impact</a>
+          <a href="#comm-reach">Reach</a>
+        </details>
+      </nav>
+    </div>
+
+    <!-- Robotics TOC -->
+    <div id="robotics-toc" style="display:none;">
+      <h3>Robotics TOC</h3>
+      <nav class="toc">
+        <details open>
+          <summary>Engineering</summary>
+          <a href="#robot-strategy">Workflow & Scores</a>
+          <a href="#robot-design">Ash-bot Features</a>
+          <a href="#robot-iterations">Attachments & Code</a>
+        </details>
+      </nav>
+    </div>
+
+    <!-- Game Dev TOC -->
+    <div id="gamedev-toc" style="display:none;">
+      <h3>Game Dev TOC</h3>
+      <nav class="toc">
+        <details open>
+          <summary>Digital Tools</summary>
+          <a href="#dev-roblox">Roblox Simulation</a>
+          <a href="#dev-strategy">Interactive Strategy</a>
+        </details>
+      </nav>
+    </div>
+
+    <!-- Team TOC -->
+    <div id="team-toc" style="display:none;">
+      <h3>Team TOC</h3>
+      <nav class="toc">
+        <details open>
+          <summary>Our Members</summary>
+          <a href="#team-bios">Student Bios</a>
+          <a href="#team-values">Core Values</a>
+        </details>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="resizer" id="resizer"></div>
+
+  <!-- Content -->
+  <main class="content">
+
+    <!-- Innovation Tab -->
+    <div id="tab-innovation">
+      <section>
+        <h2>Dig It Right: Bringing Real Archaeology to Kids</h2>
+
+        <!-- Identify group -->
+        <div id="identify">
+          <h2 class="subsection-title">Identify</h2>
+
+          <h3 id="identify-problem">Problem Statement:</h3>
+          <div class="box">
+            Archaeologists lack engaging and accurate tools or media to teach children about the
+            real scientific work behind archaeology.
+
+            <div class="img-grid-2" aria-label="Problem statement images">
+              <img src="images/UncoveringHistory.png" alt="Uncovering History">
+              <img src="images/TreasureHunting.png" alt="Treasure Hunting">
+            </div>
+          </div>
+
+          <h3 id="identify-impact">Impact of Misunderstanding:</h3>
+          <div class="box">Misleading media creates treasure-hunting myths that damage real sites.
+            <div class="img-grid-2" aria-label="Impact of Misunderstanding">
+              <img src="images/MisleadingMedia.png" alt="Misleading Media">
+              <img src="images/FewerInterested.png" alt="Fewer Interested">
+              <img src="images/LessSupport.png" alt="Less Support">
+              <img src="images/DamageToSites.png" alt="Damage To Sites">
+            </div>
+          </div>
+
+          <h3 id="identify-research">Our Research from Many Sources:</h3>
+          <div class="box">We took a survey, studied media, learned from museum archaeologists, and
+            investigated news events to realize how serious the problem is.
+            <div class="img-stack" aria-label="Research from Many Sources">
+              <img src="images/Survey.png" alt="Survey">
+              <img src="images/Media.png" alt="Media">
+              <img src="images/Museums.png" alt="Museums">
+              <img src="images/News.png" alt="News">
+            </div>
+          </div>
+        </div>
+
+        <div id="design">
+          <h2 class="subsection-title">Design</h2>
+          <h3 id="design-process">Process</h3>
+          <div class="box">
+            <ol>
+              <li>We brainstormed multiple ideas as a team.</li>
+              <li>Each team member presented their concepts and approaches.</li>
+              <li>We voted democratically and the winner is: an archaeology game.</li>
+              <li>We researched from various sources to ensure being innovative and feasible.</li>
+              <li>For solution development, Roblox is the best platform for our plan.</li>
+              <li>We met online and in person to finalize the design: Dig-It-Right game.</li>
+            </ol>
+            <div class="img-stack" aria-label="Design from Brainstorming to Final Plan">
+              <img src="images/Design.png" alt="Survey">
+            </div>
+          </div>
+        </div>
+
+        <div id="create">
+          <h2 class="subsection-title">Create</h2>
+          <h3 id="create-features">Features:</h3>
+          <div class="box">
+            We protyped our game innovation to have the following requirements:
+            <ul>
+              <li><b>Teaches real archaeology</b> instead of treasure hunting or gold digging like many other games</li>
+              <li><b>Players become archaeologists</b>, exploring dig sites around the world.</li>
+              <li><b>Promotes artifact care:</b> players must protect artifacts, not break them.</li>
+              <li><b>Lets players research artifacts</b> to uncover their history and meaning.</li>
+              <li><b>Designed through real feedback</b>, including input from archaeologists and kids who tested our game.</li>
+            </ul>
+            <div class="img-grid-2" aria-label="Dig-It-Right Game">
+              <img src="images/Create.png" alt="Create">
+            </div>
+          </div>
+
+          <h3 id="create-elements">Game Elements:</h3>
+          <div class="box">Use real tools just like real archaeologists:
+            <div class="img-stack" aria-label="Design from Brainstorming to Final Plan">
+              <img src="images/Tools.png" alt="Tools">
+            </div>
+          </div>
+        </div>
+
+        <div id="iterate">
+          <h2 class="subsection-title">Iterate</h2>
+          <h3 id="iterate-feedback">Expert Feedback</h3>
+          <div class="box">Archaeologists provided insight on realistic techniques.</div>
+          <div class="img-grid-2" aria-label="Feedback">
+            <img src="images/Feedback.png" alt="Feedback">
+          </div>
+
+          <h3 id="iterate-improvements">Improvements</h3>
+          <div class="box">After sharing our first version with archaeologist, we added lab and library:</div>
+          <div class="img-stack" aria-label="Improvements">
+            <img src="images/Improvements.png" alt="Improvements">
+          </div>
+        </div>
+
+        <div id="communication">
+          <h2 class="subsection-title">Communication</h2>
+          <h3 id="comm-learning">Impact</h3>
+          <div class="box">
+            <div class="img-grid-2" aria-label="Feedback">
+              <img src="images/Impact.png" alt="Feedback">
+            </div>
+          </div>
+
+          <h3 id="comm-reach">Reach</h3>
+          <div class="box">Our game transforms archaeology education for kids to learn real skills:
+            recording data, protecting artifacts, and making scientific decisions.
+            <div class="img-grid-2" aria-label="Feedback">
+              <img src="images/Transform.png" alt="Feedback">
+            </div>
+          </div>
+
+          <div class="box">Roblox gives us the power to reach millions:
+            <div class="img-grid-2" aria-label="Feedback">
+              <img src="images/Reach.png" alt="Feedback">
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    </div>
+
+    <!-- Robotics Tab -->
+    <div id="tab-robotics" style="display:none;">
+      <section>
+        <h2>Our Road to Robot Success</h2>
+        <h3 id="robot-strategy">Robot Workflow & Strategy</h3>
+        <div class="stats-box">Current Performance: 480 Points | 95% Confidence Level</div>
+        <div class="box">We use "My Blocks" with Gyro functions for precision navigation.</div>
+
+        <h3 id="robot-design">Design: Meet Ash-bot!!!</h3>
+        <div class="box">Box chassis design for squaring against walls and a Universal Docking
+          System.
+        </div>
+
+        <h3 id="robot-iterations">Attachments & Code</h3>
+        <div class="box">Iteration from manual levers to motorized multi-mission attachments.</div>
+      </section>
+    </div>
+
+    <!-- Game Dev Tab -->
+    <div id="tab-gamedev" style="display:none;">
+      <section>
+        <h2 id="dev-roblox">Roblox & Digital Simulation</h2>
+        <div class="box">Prototyping robot logic on the Roblox platform to optimize mission code.
+        </div>
+        <h2 id="dev-strategy">Interactive Strategy</h2>
+        <div class="box">Route planning using tools from Arvind and Sanjay Seshan.</div>
+      </section>
+    </div>
+
+    <!-- Team Tab -->
+    <div id="tab-team" style="display:none;">
+      <section>
+        <h2 id="team-bios">Meet the Lego-ologiests</h2>
+        <div class="box">A team of dedicated students, designers, and engineers.</div>
+        <h2 id="team-values">Core Values</h2>
+        <div class="box">Gracious Professionalism, Coopertition, and Teamwork.</div>
+      </section>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".tab-btn");
+  const tabIds = ["innovation", "robotics", "gamedev", "team"];
+
+  tabs.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabs.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const target = btn.dataset.tab;
+
+      tabIds.forEach(id => {
+        document.getElementById(`tab-${id}`).style.display = (id === target) ? "block" : "none";
+        document.getElementById(`${id}-toc`).style.display = (id === target) ? "block" : "none";
+      });
+    });
+  });
+
+  // Resizer Logic
+  const resizer = document.getElementById("resizer");
+  const sidebar = document.getElementById("sidebar");
+  let isResizing = false;
+  resizer.addEventListener("mousedown", () => isResizing = true);
+  document.addEventListener("mousemove", (e) => {
+    if (isResizing) {
+      sidebar.style.width = e.clientX + "px";
+    }
+  });
+  document.addEventListener("mouseup", () => isResizing = false);
+</script>
+
+</body>
 </html>
