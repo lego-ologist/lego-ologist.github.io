@@ -186,8 +186,7 @@
     }
 
     /* Content boxes -> “label cards” */
-    .box,
-    .stats-box {
+    .box {
       padding: 16px 16px;
       margin-top: 12px;
       background: linear-gradient(180deg, var(--card), var(--card-2));
@@ -197,24 +196,7 @@
       position: relative;
     }
 
-    /* Subtle “sketch border” effect */
     .box::before,
-    .stats-box::before {
-      content: "";
-      position: absolute;
-      inset: 10px;
-      /*border-radius: calc(var(--radius) - 6px);*/
-      /*border: 1px dashed rgba(59,42,26,.18);*/
-      pointer-events: none;
-    }
-
-    /* Make stats box look special (you had one in Robotics) */
-    .stats-box {
-      font-weight: 700;
-      color: var(--ink);
-      border-color: rgba(138, 90, 43, .30);
-      background: linear-gradient(180deg, rgba(176, 122, 58, .20), rgba(255, 255, 255, .22));
-    }
 
     /* Images under Problem Statement (2 across, evenly spaced) */
     .img-grid-2 {
@@ -339,7 +321,9 @@
     <button class="tab-btn active" data-tab="innovation">Innovation Project</button>
     <button class="tab-btn" data-tab="robotics">Robotics Project</button>
     <button class="tab-btn" data-tab="gamedev">Game Development</button>
+    <button class="tab-btn" data-tab="team">Events</button>
     <button class="tab-btn" data-tab="team">Our Team</button>
+    <button class="tab-btn" data-tab="team">Gallery</button>
   </div>
 </header>
 
@@ -371,34 +355,55 @@
         </details>
         <details open>
           <summary>Communicate</summary>
-          <a href="#comm-learning">Impact</a>
+          <a href="#comm-impact">Impact</a>
           <a href="#comm-reach">Reach</a>
         </details>
       </nav>
     </div>
 
     <!-- Robotics TOC -->
-    <div id="robotics-toc" style="display:none;">
-      <h3>Robotics TOC</h3>
+    <div id="robotics-toc">
       <nav class="toc">
         <details open>
-          <summary>Engineering</summary>
-          <a href="#robot-strategy">Workflow & Scores</a>
-          <a href="#robot-design">Ash-bot Features</a>
-          <a href="#robot-iterations">Attachments & Code</a>
+          <summary>Identify</summary>
+          <a href="#robot-strategy">Robot Workflow & Strategy</a>
+        </details>
+        <details open>
+          <summary>Design</summary>
+          <a href="#robot-meet">Process</a>
+        </details>
+        <details open>
+          <summary>Create</summary>
+          <a href="#robot-features">Features</a>
+        </details>
+
+        <details open>
+          <summary>Iterate</summary>
+          <a href="#robot-attach">Expert Feedback</a>
+        </details>
+        <details open>
+          <summary>Communicate</summary>
+          <a href="#robot-impact">Impact</a>
         </details>
       </nav>
     </div>
 
     <!-- Game Dev TOC -->
-    <div id="gamedev-toc" style="display:none;">
-      <h3>Game Dev TOC</h3>
+    <div id="gamedev-toc">
       <nav class="toc">
-        <details open>
-          <summary>Digital Tools</summary>
-          <a href="#dev-roblox">Roblox Simulation</a>
-          <a href="#dev-strategy">Interactive Strategy</a>
-        </details>
+        <a href="#dev-overview">Game Development Overview</a>
+        <ol>
+          <li><a href="#dev-research">Research & Inspiration</a></li>
+          <li><a href="#dev-platform">Platform & Concept Decision</a></li>
+          <li><a href="#dev-roles">Core Gameplay Roles</a></li>
+          <li><a href="#dev-integration">Design Integration</a></li>
+          <li><a href="#dev-planning">Planning & Task Distribution</a></li>
+          <li><a href="#dev-workflow">Development Workflow</a></li>
+          <li><a href="#dev-versioning">Version Control & Iteration</a></li>
+          <li><a href="#dev-review">Expert Review</a></li>
+          <li><a href="#dev-feedback">Key Feedback</a></li>
+          <li><a href="#dev-result">Final Result</a></li>
+        </ol>
       </nav>
     </div>
 
@@ -424,8 +429,6 @@
     <div id="tab-innovation">
       <section>
         <h2>Dig It Right: Bringing Real Archaeology to Kids</h2>
-
-        <!-- Identify group -->
         <div id="identify">
           <h2 class="subsection-title">Identify</h2>
 
@@ -486,11 +489,16 @@
           <div class="box">
             We protyped our game innovation to have the following requirements:
             <ul>
-              <li><b>Teaches real archaeology</b> instead of treasure hunting or gold digging like many other games</li>
+              <li><b>Teaches real archaeology</b> instead of treasure hunting or gold digging like
+                many other games
+              </li>
               <li><b>Players become archaeologists</b>, exploring dig sites around the world.</li>
-              <li><b>Promotes artifact care:</b> players must protect artifacts, not break them.</li>
+              <li><b>Promotes artifact care:</b> players must protect artifacts, not break them.
+              </li>
               <li><b>Lets players research artifacts</b> to uncover their history and meaning.</li>
-              <li><b>Designed through real feedback</b>, including input from archaeologists and kids who tested our game.</li>
+              <li><b>Designed through real feedback</b>, including input from archaeologists and
+                kids who tested our game.
+              </li>
             </ul>
             <div class="img-grid-2" aria-label="Dig-It-Right Game">
               <img src="images/Create.png" alt="Create">
@@ -508,21 +516,24 @@
         <div id="iterate">
           <h2 class="subsection-title">Iterate</h2>
           <h3 id="iterate-feedback">Expert Feedback</h3>
-          <div class="box">Archaeologists provided insight on realistic techniques.</div>
-          <div class="img-grid-2" aria-label="Feedback">
-            <img src="images/Feedback.png" alt="Feedback">
+          <div class="box">Archaeologists provided insight on realistic techniques.
+            <div class="img-grid-2" aria-label="Feedback">
+              <img src="images/Feedback.png" alt="Feedback">
+            </div>
           </div>
 
           <h3 id="iterate-improvements">Improvements</h3>
-          <div class="box">After sharing our first version with archaeologist, we added lab and library:</div>
-          <div class="img-stack" aria-label="Improvements">
-            <img src="images/Improvements.png" alt="Improvements">
+          <div class="box">After sharing our first version with archaeologist, we added lab and
+            library:
+            <div class="img-stack" aria-label="Improvements">
+              <img src="images/Improvements.png" alt="Improvements">
+            </div>
           </div>
         </div>
 
         <div id="communication">
           <h2 class="subsection-title">Communication</h2>
-          <h3 id="comm-learning">Impact</h3>
+          <h3 id="comm-impact">Impact</h3>
           <div class="box">
             <div class="img-grid-2" aria-label="Feedback">
               <img src="images/Impact.png" alt="Feedback">
@@ -552,30 +563,178 @@
     <div id="tab-robotics" style="display:none;">
       <section>
         <h2>Our Road to Robot Success</h2>
-        <h3 id="robot-strategy">Robot Workflow & Strategy</h3>
-        <div class="stats-box">Current Performance: 480 Points | 95% Confidence Level</div>
-        <div class="box">We use "My Blocks" with Gyro functions for precision navigation.</div>
+        <div id="robot-identify">
+          <h2 class="subsection-title">Identify</h2>
 
-        <h3 id="robot-design">Design: Meet Ash-bot!!!</h3>
-        <div class="box">Box chassis design for squaring against walls and a Universal Docking
-          System.
+          <h3 id="robot-strategy">Robot Workflow & Strategy</h3>
+          <div class="box">We use "My Blocks" with Gyro functions for precision navigation.</div>
         </div>
 
-        <h3 id="robot-iterations">Attachments & Code</h3>
-        <div class="box">Iteration from manual levers to motorized multi-mission attachments.</div>
+        <div id="robot-design">
+          <h2 class="subsection-title">Design</h2>
+          <h3 id="robot-meet">Design: Meet Ash-bot!!!</h3>
+          <div class="box">Box chassis design for squaring against walls and a Universal Docking
+            System.
+          </div>
+        </div>
+
+        <div id="robo-create">
+          <h2 class="subsection-title">Create</h2>
+          <h3 id="robot-features">Features:</h3>
+          <div class="box">
+            We protyped our game innovation to have the following requirements:
+          </div>
+        </div>
+
+        <div id="robot-iterate">
+          <h2 class="subsection-title">Iterate</h2>
+          <h3 id="robot-attach">Attachments & Code</h3>
+          <div class="box">Iteration from manual levers to motorized multi-mission attachments.
+          </div>
+        </div>
+
+        <div id="robo-communicate">
+          <h2 class="subsection-title">Communication</h2>
+          <h3 id="robot-impact">Impact</h3>
+          <div class="box">
+            <div class="img-grid-2" aria-label="Feedback">
+              <img src="images/Impact.png" alt="Feedback">
+            </div>
+          </div>
+        </div>
+
       </section>
     </div>
 
     <!-- Game Dev Tab -->
     <div id="tab-gamedev" style="display:none;">
       <section>
-        <h2 id="dev-roblox">Roblox & Digital Simulation</h2>
-        <div class="box">Prototyping robot logic on the Roblox platform to optimize mission code.
+
+        <h3 id="dev-overview">Game Development Overview</h3>
+        <div class="box">
+          This section describes how our archaeology game was researched, designed, built, and
+          improved through feedback and iteration.
+          <ul>
+            <li>Focused on realism, engagement, and education</li>
+            <li>Developed through team collaboration and iteration</li>
+            <li>Refined using expert feedback from archaeologists</li>
+          </ul>
         </div>
-        <h2 id="dev-strategy">Interactive Strategy</h2>
-        <div class="box">Route planning using tools from Arvind and Sanjay Seshan.</div>
+
+        <h3 id="dev-research">Research & Inspiration</h3>
+        <div class="box">
+          We began by studying existing archaeology-related games and educational resources.
+          <ul>
+            <li>Most existing games focus on combat or treasure hunting</li>
+            <li>Very few represent real archaeological practice</li>
+            <li><em>Tools of the Trade</em> (AMNH / Science Trek) was identified as a strong
+              educational reference
+            </li>
+            <li>Our goal was to build something more engaging and more accurate</li>
+          </ul>
+        </div>
+
+        <h3 id="dev-platform">Platform & Concept Decision</h3>
+        <div class="box">
+          The team discussed how to turn the educational concept into a fun and accessible game.
+          <ul>
+            <li>Existing educational games were informative but too simple</li>
+            <li>We decided to expand the idea into a more engaging experience</li>
+            <li>Roblox was chosen for its accessibility and audience fit</li>
+            <li>The team reached a consensus on this direction</li>
+          </ul>
+        </div>
+
+        <h3 id="dev-roles">Core Gameplay Roles</h3>
+        <div class="box">
+          We designed three main roles to represent real archaeological work.
+          <ul>
+            <li><b>Excavator:</b> Introductory role for Level 1</li>
+            <li><b>Analyst:</b> Advanced role for Level 2</li>
+            <li><b>Recorder:</b> Companion character with a notebook and camera</li>
+            <li>Each role reflects real responsibilities in an excavation team</li>
+          </ul>
+        </div>
+
+        <h3 id="dev-integration">Design Integration</h3>
+        <div class="box">
+          Archaeological tools and actions were integrated directly into gameplay.
+          <ul>
+            <li>Tools were mapped to real excavation steps</li>
+            <li>New mechanics are introduced as players dig deeper</li>
+            <li>Gameplay follows a realistic excavation workflow</li>
+          </ul>
+        </div>
+
+        <h3 id="dev-planning">Planning & Task Distribution</h3>
+        <div class="box">
+          The game plan developed naturally as the team defined assets and features.
+          <ul>
+            <li>Dozens of items and assets were listed</li>
+            <li>Team members selected items based on interest</li>
+            <li>Remaining tasks were distributed evenly</li>
+            <li>This ensured balanced workload across the team</li>
+          </ul>
+        </div>
+
+        <h3 id="dev-workflow">Development Workflow</h3>
+        <div class="box">
+          The team collaborated using shared tools and regular meetings.
+          <ul>
+            <li>Models were developed individually in a shared project</li>
+            <li>Team met every Tuesday and Thursday</li>
+            <li>Roblox <b>Live Collaborators</b> was used to merge work</li>
+            <li>Frequent integration and testing improved stability</li>
+          </ul>
+        </div>
+
+        <h3 id="dev-versioning">Version Control & Iteration</h3>
+        <div class="box">
+          Version control supported safe experimentation and continuous improvement.
+          <ul>
+            <li>Allowed rollback to earlier builds when issues occurred</li>
+            <li>Hundreds of versions were created during development</li>
+            <li>Each version represented an iteration or improvement</li>
+          </ul>
+        </div>
+
+        <h3 id="dev-review">Expert Review</h3>
+        <div class="box">
+          The first playable version was reviewed by archaeology experts.
+          <ul>
+            <li>Presented to Dr. Giovine and Prof. Silber</li>
+            <li>Location: West Chester University Museum of Anthropology and Archaeology</li>
+            <li>Feedback was based on real-world archaeology practices</li>
+            <li>Confirmed overall accuracy of the game’s approach</li>
+          </ul>
+        </div>
+
+        <h3 id="dev-feedback">Key Feedback</h3>
+        <div class="box">
+          The experts suggested several improvements to increase realism and clarity.
+          <ul>
+            <li>Add layered soil strata with different colors</li>
+            <li>Distribute artifacts from newer to older layers with depth</li>
+            <li>Use a more flexible grid system based on artifact density</li>
+            <li>Add protective gear and water for excavators</li>
+            <li>Add NPCs or hints to guide players and highlight the dig site</li>
+          </ul>
+        </div>
+
+        <h3 id="dev-result">Final Result</h3>
+        <div class="box">
+          After implementing the feedback, the game improved significantly.
+          <ul>
+            <li>More realistic excavation experience</li>
+            <li>More engaging and educational gameplay</li>
+            <li>Better guidance and environmental storytelling</li>
+            <li>Clear improvement over the initial prototype</li>
+          </ul>
+        </div>
+
       </section>
     </div>
+
 
     <!-- Team Tab -->
     <div id="tab-team" style="display:none;">
