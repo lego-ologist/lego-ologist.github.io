@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lego-ologiest Team</title>
+  <title>Lego-ologists Team</title>
 
   <style>
     /* =========================
@@ -51,7 +51,7 @@
     h1 {
       margin: 0 0 10px 0;
       font-size: 30px;
-      letter-spacing: .4px;
+      letter-spacing: 1px;
       color: var(--ink);
     }
 
@@ -109,7 +109,7 @@
     .sidebar h3 {
       margin: 8px 0 10px;
       font-size: 16px;
-      letter-spacing: .3px;
+      letter-spacing: 1px;
       color: var(--ink);
     }
 
@@ -176,7 +176,7 @@
       color: var(--ink);
       padding-bottom: 10px;
       border-bottom: 2px solid rgba(138, 90, 43, .35);
-      letter-spacing: .2px;
+      letter-spacing: 1px;
     }
 
     section h3 {
@@ -309,18 +309,19 @@
       color: var(--ink);
       padding-bottom: 10px;
       border-bottom: 2px solid rgba(138, 90, 43, .28);
-      letter-spacing: .2px;
+      letter-spacing: 1px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Lego-ologiest Team</h1>
+  <h1>Lego-ologist Team</h1>
   <div class="tabs">
     <button class="tab-btn active" data-tab="innovation">Innovation Project</button>
-    <button class="tab-btn" data-tab="robotics">Robotics Project</button>
+    <button class="tab-btn active" data-tab="game">Our Game</button>
     <button class="tab-btn" data-tab="gamedev">Game Development</button>
+    <button class="tab-btn" data-tab="robotics">Robotics Project</button>
     <button class="tab-btn" data-tab="team">Events</button>
     <button class="tab-btn" data-tab="team">Our Team</button>
     <button class="tab-btn" data-tab="team">Gallery</button>
@@ -334,39 +335,68 @@
       <nav class="toc">
         <details open>
           <summary>Identify</summary>
-          <a href="#identify-problem">Problem Statement</a>
-          <a href="#identify-impact">Impact of Misunderstanding</a>
-          <a href="#identify-research">Our Research from Many Sources</a>
+          <a href="#identify-problem">• Problem Statement</a>
+          <a href="#identify-impact">• Impact of Misunderstanding</a>
+          <a href="#identify-research">• Our Research from Many Sources</a>
         </details>
         <details open>
           <summary>Design</summary>
-          <a href="#design-process">Process</a>
+          <a href="#design-process">• Process</a>
         </details>
         <details open>
           <summary>Create</summary>
-          <a href="#create-features">Features</a>
-          <a href="#create-elements">Game Elements</a>
+          <a href="#create-features">• Features</a>
+          <a href="#create-elements">• Game Elements</a>
         </details>
 
         <details open>
           <summary>Iterate</summary>
-          <a href="#iterate-feedback">Expert Feedback</a>
-          <a href="#iterate-improvements">Improvements</a>
+          <a href="#iterate-feedback">• Expert Feedback</a>
+          <a href="#iterate-improvements">• Improvements</a>
         </details>
         <details open>
           <summary>Communicate</summary>
-          <a href="#comm-impact">Impact</a>
-          <a href="#comm-reach">Reach</a>
+          <a href="#comm-impact">• Impact</a>
+          <a href="#comm-reach">• Reach</a>
         </details>
       </nav>
     </div>
 
+    <!-- Game TOC -->
+    <div id="game-toc" style="display:none;">
+      <nav class="toc">
+        <a href="#game-qr">Game Development Overview</a>
+        <ol>
+          <li><a href="#game-misunderstanding">Misunderstanding</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Game Dev TOC -->
+    <div id="gamedev-toc" style="display:none;">
+      <nav class="toc">
+        <a href="#dev-overview">Game Development Overview</a>
+        <ol>
+          <li><a href="#dev-research">Research & Inspiration</a></li>
+          <li><a href="#dev-platform">Platform & Concept Decision</a></li>
+          <li><a href="#dev-roles">Core Gameplay Roles</a></li>
+          <li><a href="#dev-integration">Design Integration</a></li>
+          <li><a href="#dev-planning">Planning & Task Distribution</a></li>
+          <li><a href="#dev-workflow">Development Workflow</a></li>
+          <li><a href="#dev-versioning">Version Control & Iteration</a></li>
+          <li><a href="#dev-review">Expert Review</a></li>
+          <li><a href="#dev-feedback">Key Feedback</a></li>
+          <li><a href="#dev-result">Final Result</a></li>
+        </ol>
+      </nav>
+    </div>
+
     <!-- Robotics TOC -->
-    <div id="robotics-toc">
+    <div id="robotics-toc" style="display:none;">
       <nav class="toc">
         <details open>
           <summary>Identify</summary>
-          <a href="#robot-strategy">Robot Workflow & Strategy</a>
+          <a href="#robot-strategy">• Tackle tough problems</a>
         </details>
         <details open>
           <summary>Design</summary>
@@ -388,25 +418,6 @@
       </nav>
     </div>
 
-    <!-- Game Dev TOC -->
-    <div id="gamedev-toc">
-      <nav class="toc">
-        <a href="#dev-overview">Game Development Overview</a>
-        <ol>
-          <li><a href="#dev-research">Research & Inspiration</a></li>
-          <li><a href="#dev-platform">Platform & Concept Decision</a></li>
-          <li><a href="#dev-roles">Core Gameplay Roles</a></li>
-          <li><a href="#dev-integration">Design Integration</a></li>
-          <li><a href="#dev-planning">Planning & Task Distribution</a></li>
-          <li><a href="#dev-workflow">Development Workflow</a></li>
-          <li><a href="#dev-versioning">Version Control & Iteration</a></li>
-          <li><a href="#dev-review">Expert Review</a></li>
-          <li><a href="#dev-feedback">Key Feedback</a></li>
-          <li><a href="#dev-result">Final Result</a></li>
-        </ol>
-      </nav>
-    </div>
-
     <!-- Team TOC -->
     <div id="team-toc" style="display:none;">
       <h3>Team TOC</h3>
@@ -425,10 +436,10 @@
   <!-- Content -->
   <main class="content">
 
-    <!-- Innovation Tab -->
+    <!-- Innovation Project -->
     <div id="tab-innovation">
       <section>
-        <h2>Dig It Right: Bringing Real Archaeology to Kids</h2>
+        <h2>Dig It Right: Making Real-World Archaeology Accessible to Young Explorers</h2>
         <div id="identify">
           <h2 class="subsection-title">Identify</h2>
 
@@ -473,7 +484,7 @@
               <li>We brainstormed multiple ideas as a team.</li>
               <li>Each team member presented their concepts and approaches.</li>
               <li>We voted democratically and the winner is: an archaeology game.</li>
-              <li>We researched from various sources to ensure being innovative and feasible.</li>
+              <li>We researched from various sources to ensure being innovative and possible.</li>
               <li>For solution development, Roblox is the best platform for our plan.</li>
               <li>We met online and in person to finalize the design: Dig-It-Right game.</li>
             </ol>
@@ -559,57 +570,18 @@
       </section>
     </div>
 
-    <!-- Robotics Tab -->
-    <div id="tab-robotics" style="display:none;">
+    <!-- Our Game -->
+    <div id="tab-game" style="display:none;">
       <section>
-        <h2>Our Road to Robot Success</h2>
-        <div id="robot-identify">
-          <h2 class="subsection-title">Identify</h2>
+        <h3 id="game-qr">QR Code</h3>
 
-          <h3 id="robot-strategy">Robot Workflow & Strategy</h3>
-          <div class="box">We use "My Blocks" with Gyro functions for precision navigation.</div>
-        </div>
-
-        <div id="robot-design">
-          <h2 class="subsection-title">Design</h2>
-          <h3 id="robot-meet">Design: Meet Ash-bot!!!</h3>
-          <div class="box">Box chassis design for squaring against walls and a Universal Docking
-            System.
-          </div>
-        </div>
-
-        <div id="robo-create">
-          <h2 class="subsection-title">Create</h2>
-          <h3 id="robot-features">Features:</h3>
-          <div class="box">
-            We protyped our game innovation to have the following requirements:
-          </div>
-        </div>
-
-        <div id="robot-iterate">
-          <h2 class="subsection-title">Iterate</h2>
-          <h3 id="robot-attach">Attachments & Code</h3>
-          <div class="box">Iteration from manual levers to motorized multi-mission attachments.
-          </div>
-        </div>
-
-        <div id="robo-communicate">
-          <h2 class="subsection-title">Communication</h2>
-          <h3 id="robot-impact">Impact</h3>
-          <div class="box">
-            <div class="img-grid-2" aria-label="Feedback">
-              <img src="images/Impact.png" alt="Feedback">
-            </div>
-          </div>
-        </div>
-
+        <h3 id="game-misunderstanding">Misunderstanding</h3>
       </section>
     </div>
 
     <!-- Game Dev Tab -->
     <div id="tab-gamedev" style="display:none;">
       <section>
-
         <h3 id="dev-overview">Game Development Overview</h3>
         <div class="box">
           This section describes how our archaeology game was researched, designed, built, and
@@ -641,7 +613,7 @@
             <li>Existing educational games were informative but too simple</li>
             <li>We decided to expand the idea into a more engaging experience</li>
             <li>Roblox was chosen for its accessibility and audience fit</li>
-            <li>The team reached a consensus on this direction</li>
+            <li>The team reached a consensus in this direction</li>
           </ul>
         </div>
 
@@ -672,8 +644,8 @@
           <ul>
             <li>Dozens of items and assets were listed</li>
             <li>Team members selected items based on interest</li>
-            <li>Remaining tasks were distributed evenly</li>
-            <li>This ensured balanced workload across the team</li>
+            <li>The remaining tasks were distributed evenly</li>
+            <li>This ensured a balanced workload across the team</li>
           </ul>
         </div>
 
@@ -682,7 +654,7 @@
           The team collaborated using shared tools and regular meetings.
           <ul>
             <li>Models were developed individually in a shared project</li>
-            <li>Team met every Tuesday and Thursday</li>
+            <li>The team met every Tuesday and Thursday</li>
             <li>Roblox <b>Live Collaborators</b> was used to merge work</li>
             <li>Frequent integration and testing improved stability</li>
           </ul>
@@ -731,7 +703,80 @@
             <li>Clear improvement over the initial prototype</li>
           </ul>
         </div>
+      </section>
+    </div>
 
+    <!-- Robotics Project -->
+    <div id="tab-robotics" style="display:none;">
+      <section>
+        <h2>Our Road to Robot Success!</h2>
+        <div id="robot-identify">
+          <h2 class="subsection-title">Identify</h2>
+
+          <h3 id="robot-strategy">Tackle tough problems with strategic clarity</h3>
+          <div class="box">
+            <ul>
+              <li>Plan smart routes
+                <div class="img-stack" aria-label="Improvements">
+                  <img src="images/PlanSmartRoutes.png" alt="Improvements">
+                </div>
+              </li>
+              <li>Reuse attachments for multiple missions
+                <div class="img-stack" aria-label="Improvements">
+                  <img src="images/MutipleMission.png" alt="Improvements">
+                </div>
+              </li>
+              <li>Skip complicated missions
+                <div class="img-stack" aria-label="Improvements">
+                  <img src="images/SkipComplicatedMission.png" alt="Improvements">
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="robot-design">
+          <h2 class="subsection-title">Design</h2>
+          <h3 id="robot-meet">Design: Meet Ash-bot!!!</h3>
+          <div class="box">Box chassis design for squaring against walls and a Universal Docking
+            System.
+          </div>
+        </div>
+
+        <div id="robo-create">
+          <h2 class="subsection-title">Create</h2>
+          <h3 id="robot-features">Features:</h3>
+          <div class="box">
+            We protyped our game innovation to have the following requirements:
+          </div>
+        </div>
+
+        <div id="robot-iterate">
+          <h2 class="subsection-title">Iterate</h2>
+          <h3 id="robot-attach">Attachments & Code</h3>
+          <div class="box">Iteration from manual levers to motorized multi-mission attachments.
+          </div>
+        </div>
+
+        <div id="robo-communicate">
+          <h2 class="subsection-title">Communication</h2>
+          <h3 id="robot-impact">Impact</h3>
+          <div class="box">
+            <div class="img-grid-2" aria-label="Feedback">
+              <img src="images/Impact.png" alt="Feedback">
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- Event -->
+    <div id="tab-event" style="display:none;">
+      <section>
+        <h3 id="event1">Event1</h3>
+
+        <h3 id="event2">Event1</h3>
       </section>
     </div>
 
@@ -739,31 +784,146 @@
     <!-- Team Tab -->
     <div id="tab-team" style="display:none;">
       <section>
-        <h2 id="team-bios">Meet the Lego-ologiests</h2>
+        <h2 id="team-bios">Meet the Lego-ologists</h2>
         <div class="box">A team of dedicated students, designers, and engineers.</div>
         <h2 id="team-values">Core Values</h2>
         <div class="box">Gracious Professionalism, Coopertition, and Teamwork.</div>
       </section>
     </div>
 
+    <!-- Our Game -->
+    <div id="tab-gallery" style="display:none;">
+      <section>
+        <h3 id="gallery1">Gallery 1</h3>
+
+        <h3 id="gallery2">Gallery 2</h3>
+      </section>
+    </div>
   </main>
 </div>
 
 <script>
   const tabs = document.querySelectorAll(".tab-btn");
-  const tabIds = ["innovation", "robotics", "gamedev", "team"];
+  const tabIds = ["innovation", "game", "gamedev", "robotics", "event", "team", "gallery"];
 
+  // Map anchor IDs to tabs
+  const anchorToTab = {
+    // Innovation
+    "identify-problem": "innovation",
+    "identify-impact": "innovation",
+    "identify-research": "innovation",
+    "design-process": "innovation",
+    "create-features": "innovation",
+    "create-elements": "innovation",
+    "iterate-feedback": "innovation",
+    "iterate-improvements": "innovation",
+    "comm-impact": "innovation",
+    "comm-reach": "innovation",
+
+    // Our Game
+    "game-qr": "game",
+    "game-misunderstanding": "game",
+
+    // GameDev
+    "dev-overview": "gamedev",
+    "dev-research": "gamedev",
+    "dev-platform": "gamedev",
+    "dev-roles": "gamedev",
+    "dev-integration": "gamedev",
+    "dev-planning": "gamedev",
+    "dev-workflow": "gamedev",
+    "dev-versioning": "gamedev",
+    "dev-review": "gamedev",
+    "dev-feedback": "gamedev",
+    "dev-result": "gamedev",
+
+    // Robotics
+    "robot-strategy": "robotics",
+    "robot-meet": "robotics",
+    "robot-features": "robotics",
+    "robot-attach": "robotics",
+    "robot-impact": "robotics",
+
+    // Event
+    "event1": "event",
+    "event2": "event",
+
+    // Team
+    "team-bios": "team",
+    "team-values": "team",
+
+    // Event
+    "gallery1": "gallery",
+    "gallery2": "gallery",
+  };
+
+  function activateTab(target) {
+    tabs.forEach(b => {
+      b.classList.toggle("active", b.dataset.tab === target);
+    });
+
+    tabIds.forEach(id => {
+      const tab = document.getElementById(`tab-${id}`);
+      const toc = document.getElementById(`${id}-toc`);
+      if (tab) tab.style.display = (id === target) ? "block" : "none";
+      if (toc) toc.style.display = (id === target) ? "block" : "none";
+    });
+  }
+
+  function scrollToHash(hash) {
+    if (!hash) return;
+    const id = hash.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50); // wait for layout after the tab switch
+    }
+  }
+
+  // Handle tab button clicks
   tabs.forEach(btn => {
     btn.addEventListener("click", () => {
-      tabs.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
       const target = btn.dataset.tab;
-
-      tabIds.forEach(id => {
-        document.getElementById(`tab-${id}`).style.display = (id === target) ? "block" : "none";
-        document.getElementById(`${id}-toc`).style.display = (id === target) ? "block" : "none";
-      });
+      activateTab(target);
     });
+  });
+
+  // Handle clicks on any in-page anchor links (TOC)
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a[href^='#']");
+    if (!link) return;
+
+    const hash = link.getAttribute("href");
+    const id = hash.replace("#", "");
+
+    if (anchorToTab[id]) {
+      e.preventDefault();
+
+      const targetTab = anchorToTab[id];
+      activateTab(targetTab);
+
+      // Update URL without a reload
+      history.pushState(null, "", hash);
+
+      scrollToHash(hash);
+    }
+  });
+
+  // Handle initial load with hash (refresh / pasted link)
+  window.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace("#", "");
+      if (anchorToTab[id]) {
+        const targetTab = anchorToTab[id];
+        activateTab(targetTab);
+        scrollToHash(hash);
+        return;
+      }
+    }
+    // Default tab
+    activateTab("innovation");
   });
 
   // Resizer Logic
