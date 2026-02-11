@@ -319,8 +319,8 @@
   <h1>Lego-ologist Team</h1>
   <div class="tabs">
     <button class="tab-btn active" data-tab="innovation">Innovation Project</button>
-    <button class="tab-btn active" data-tab="game">Our Game</button>
     <button class="tab-btn" data-tab="gamedev">Game Development</button>
+    <button class="tab-btn active" data-tab="game">Our Game</button>
     <button class="tab-btn" data-tab="robotics">Robotics Project</button>
     <button class="tab-btn" data-tab="team">Events</button>
     <button class="tab-btn" data-tab="team">Our Team</button>
@@ -362,16 +362,6 @@
       </nav>
     </div>
 
-    <!-- Game TOC -->
-    <div id="game-toc" style="display:none;">
-      <nav class="toc">
-        <a href="#game-qr">Game Development Overview</a>
-        <ol>
-          <li><a href="#game-misunderstanding">Misunderstanding</a></li>
-        </ol>
-      </nav>
-    </div>
-
     <!-- Game Dev TOC -->
     <div id="gamedev-toc" style="display:none;">
       <nav class="toc">
@@ -388,6 +378,14 @@
           <li><a href="#dev-feedback">Key Feedback</a></li>
           <li><a href="#dev-result">Final Result</a></li>
         </ol>
+      </nav>
+    </div>
+
+    <!-- Game TOC -->
+    <div id="game-toc" style="display:none;">
+      <nav class="toc">
+        <a href="#game-misconception">• Misconception</a>
+        <a href="#game-play">• Play Our Game</a>
       </nav>
     </div>
 
@@ -570,15 +568,6 @@
       </section>
     </div>
 
-    <!-- Our Game -->
-    <div id="tab-game" style="display:none;">
-      <section>
-        <h3 id="game-qr">QR Code</h3>
-
-        <h3 id="game-misunderstanding">Misunderstanding</h3>
-      </section>
-    </div>
-
     <!-- Game Dev Tab -->
     <div id="tab-gamedev" style="display:none;">
       <section>
@@ -599,8 +588,10 @@
           <ul>
             <li>Most existing games focus on combat or treasure hunting</li>
             <li>Very few represent real archaeological practice</li>
-            <li><em>Tools of the Trade</em> (AMNH / Science Trek) was identified as a strong
-              educational reference
+            <li><a href="https://www.amnh.org/explore/ology/archaeology/tools-of-the-trade2">
+              Tools of the Trade</a> of American Museum of Natural History from
+              <a href="https://sciencetrek.org/topics/archaeology/games">Science Trek</a> was
+              identified as a strong educational reference
             </li>
             <li>Our goal was to build something more engaging and more accurate</li>
           </ul>
@@ -706,6 +697,53 @@
       </section>
     </div>
 
+    <!-- Our Game -->
+    <div id="tab-game" style="display:none;">
+      <section>
+        <h2 class="subsection-title" id="game-misconception">Misconception</h2>
+        <div class="box">
+          Most people think they understand archaeology. In reality, the misconception is so
+          widespread that even AI generated inaccurate images for our <em>Dig It Right!</em> game icons:
+          <div class="img-grid-2" aria-label="Dig It Wrong">
+            <img src="images/DigDino.png" alt="Dig Dino" style="height: 90%;">
+            <img src="images/DigTreasure.png" alt="Dig Treasure">
+          </div>
+        </div>
+        <div class="box">
+          Oftentimes news is mistakenly categorized under it:
+          <div class="img-stack" aria-label="Mistaken News">
+            <img src="images/WrongNews1.png" alt="Wrong News 2" style="height: 90%;">
+            <img src="images/WrongNews2.png" alt="Wrong News 2">
+          </div>
+          Can you spot what’s wrong in the images and news titles above?
+        </div>
+
+        <h2 class="subsection-title" id="game-play">Play Our Game</h2>
+        <h3>Here is our <a href="https://www.youtube.com/watch?v=yCqBKxZDACw">game demo</a>:</h3>
+        <div class="box">
+          <div class="img-stack" aria-label="Mistaken News">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yCqBKxZDACw?si=vDVp3tJ1-2GMoAlY"
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          Does our demo leave you feeling like just another treasure-hunt game? If so, we invite you
+          to dive deeper. Experience an immersive environment designed to provide a genuine
+          perspective on the field of archaeology. By refining the American Museum of Natural History
+          (AMNH)’s original concept, we’ve developed an authentic simulation for you to explore.
+        </div>
+        <h3>Play our <a href="https://www.roblox.com/games/85800684472755/Dig-it-Right">
+          Dig It Right!</a> game and share with your friends by the Demo and Game QRs below:</h3>
+        <div class="box">
+          <div class="img-grid-2" aria-label="Mistaken News">
+            <img src="images/GameDemoQR.png" alt="Wrong News 2">
+            <img src="images/GameQR.png" alt="Wrong News 2">
+          </div>
+        </div>
+
+
+      </section>
+    </div>
+
     <!-- Robotics Project -->
     <div id="tab-robotics" style="display:none;">
       <section>
@@ -791,7 +829,7 @@
       </section>
     </div>
 
-    <!-- Our Game -->
+    <!-- Gallery Tab -->
     <div id="tab-gallery" style="display:none;">
       <section>
         <h3 id="gallery1">Gallery 1</h3>
@@ -820,10 +858,6 @@
     "comm-impact": "innovation",
     "comm-reach": "innovation",
 
-    // Our Game
-    "game-qr": "game",
-    "game-misunderstanding": "game",
-
     // GameDev
     "dev-overview": "gamedev",
     "dev-research": "gamedev",
@@ -836,6 +870,10 @@
     "dev-review": "gamedev",
     "dev-feedback": "gamedev",
     "dev-result": "gamedev",
+
+    // Our Game
+    "game-misconception": "game",
+    "game-play": "game",
 
     // Robotics
     "robot-strategy": "robotics",
