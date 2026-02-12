@@ -198,7 +198,7 @@
 
     .box::before,
 
-    /* Images under Problem Statement (2 across, evenly spaced) */
+      /* Images under Problem Statement (2 across, evenly spaced) */
     .img-grid-2 {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -245,9 +245,9 @@
     }
 
     .img-grid-3 img {
-      height: 500px;       /* fixed, same height */
-      width: 100%;         /* fill column width */
-      object-fit: contain;/* show whole image, no cropping */
+      height: 500px;
+      width: 100%;
+      object-fit: contain; /* show whole image, no cropping */
       display: block;
       background: #f5f5f5; /* optional: shows the empty space nicely */
     }
@@ -269,6 +269,20 @@
       min-height: 2.4em; /* ~2 lines */
     }
 
+    .page-title {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2rem;
+    }
+
+    .logo-float {
+      position: fixed; /* sticks to viewport */
+      top: 16px;
+      right: 16px; /* <-- right instead of left */
+      height: 156px; /* adjust size */
+      width: auto; /* keep aspect ratio */
+      z-index: 1000;
+    }
 
     /* Mobile optimization (keeps your original behavior) */
     @media (max-width: 768px) {
@@ -357,15 +371,15 @@
 <body>
 
 <header>
-  <h1>Lego-ologist Team</h1>
+  <h1 class="page-title">Lego-ologist Team</h1>
+  <img src="images/Lego-ologist.png" alt="Logo" class="logo-float">
   <div class="tabs">
     <button class="tab-btn active" data-tab="innovation">Innovation Project</button>
     <button class="tab-btn" data-tab="gamedev">Game Development</button>
     <button class="tab-btn active" data-tab="game">Our Game</button>
     <button class="tab-btn" data-tab="robotics">Robotics Project</button>
-    <button class="tab-btn" data-tab="team">Events</button>
+    <button class="tab-btn" data-tab="event">Events</button>
     <button class="tab-btn" data-tab="team">Our Team</button>
-    <button class="tab-btn" data-tab="team">Gallery</button>
   </div>
 </header>
 
@@ -467,20 +481,43 @@
 
         <details open>
           <summary>Communicate</summary>
-          <a href="#robot-communicate">Teamwork & Fun Times</a>
+          <a href="#robot-communicate">• Teamwork & Fun Times</a>
         </details>
+      </nav>
+    </div>
+
+    <!-- Event TOC -->
+    <div id="event-toc" style="display:none;">
+      <nav class="toc">
+        <a href="#event-wcu">• Visit WCU</a>
+        <a href="#event-penn">• Visit Penn Museum</a>
+        <a href="#event-scrimmage">• FLL Scrimmage</a>
+        <a href="#event-qualify">• FLL Qualifier</a>
+        <a href="#event-regional">• FLL Regional</a>
+        <a href="#event-state">• FLL State</a>
       </nav>
     </div>
 
     <!-- Team TOC -->
     <div id="team-toc" style="display:none;">
-      <h3>Team TOC</h3>
       <nav class="toc">
-        <details open>
-          <summary>Our Members</summary>
-          <a href="#team-bios">Student Bios</a>
-          <a href="#team-values">Core Values</a>
-        </details>
+        <a href="#team-bios">Meet Our Team</a>
+        <ul>
+          <li><a href="#team-allen">Allen</a></li>
+          <li><a href="#team-annabel">Annabel</a></li>
+          <li><a href="#team-ashley">Ashley</a></li>
+          <li><a href="#team-ben">Benjamin</a></li>
+          <li><a href="#team-dan">Daniel</a></li>
+          <li><a href="#team-henry">Henry</a></li>
+          <li><a href="#team-jj">JJ (Jixiang)</a></li>
+        </ul>
+        <a href="#team-coach">Coaches</a>
+        <ul>
+          <li><a href="#team-zhuge">Xing Zhuge</a></li>
+          <li><a href="#team-xue">Wenqin Xue</a></li>
+        </ul>
+        <a href="#team-values">Core Values</a>
+        <a href="#team-fun">Fun Facts</a>
       </nav>
     </div>
   </aside>
@@ -493,7 +530,22 @@
     <!-- Innovation Project -->
     <div id="tab-innovation">
       <section>
-        <h2>Dig It Right: Making Real-World Archaeology Accessible to Young Explorers</h2>
+        <h2>Dig It Right: Bringing Real-World Archaeology to the Public</h2>
+        <ul>
+          <li>Our project is an archaeology-themed Roblox game called <strong>“Dig It
+            Right!”</strong></li>
+          <li>Through this project, we had the chance not only to play games, but also to build and
+            code our own.
+          </li>
+          <li>We discussed archaeology and our game idea with Dr. Barbara Silber from West Chester
+            University and learned a lot about real archaeology.
+          </li>
+          <li>We received valuable feedback for improving the game, such as adding a lab mode.</li>
+          <li>We shared our game demo with other kids, and they said they learned new facts about
+            real archaeology.
+          </li>
+        </ul>
+
         <div id="identify">
           <h2 class="subsection-title">Identify</h2>
 
@@ -779,9 +831,12 @@
         <div class="box" aria-label="Mistaken News">
           Here is our <a href="https://www.youtube.com/watch?v=yCqBKxZDACw" target="_blank"
                          rel="noopener noreferrer">game demo</a>:<br/>
-          <iframe width="800" height="450" src="https://www.youtube.com/embed/yCqBKxZDACw?si=vDVp3tJ1-2GMoAlY"
-                  title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br/>
+          <iframe width="800" height="450"
+                  src="https://www.youtube.com/embed/yCqBKxZDACw?si=vDVp3tJ1-2GMoAlY"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <br/>
           Does our demo leave you feeling like just another treasure-hunt game? If so, we invite you
           to dive deeper:<br/>
           Experience an immersive environment designed to provide a genuine
@@ -793,13 +848,13 @@
         </div>
 
         <div class="box">
-          <h3>Play our Roblox game <a href="https://www.roblox.com/games/85800684472755/Dig-it-Right"
-                             target="_blank" rel="noopener noreferrer">
-          Dig It Right!</a> and invite your friends with the Demo and Game QR codes below:
+          <h3>Play our Roblox game <a
+              href="https://www.roblox.com/games/85800684472755/Dig-it-Right"
+              target="_blank" rel="noopener noreferrer">
+            Dig It Right!</a> and invite your friends with the game QR code:
           </h3>
-          <div class="img-grid-2" aria-label="Mistaken News">
-            <img src="images/GameDemoQR.png" alt="Wrong News 2">
-            <img src="images/GameQR.png" alt="Wrong News 2">
+          <div aria-label="QR">
+            <img src="images/GameQR.png" style="height: 90%; width: 90%" alt="QR">
           </div>
         </div>
 
@@ -811,24 +866,35 @@
             <li>It’s generally incorrect to categorize dinosaur fossils as archaeology.</li>
             <li>Dinosaur fossils belong to Paleontology, the study of ancient non-human life.</li>
             <li>Human artifacts and human remains belong to Archaeology.</li>
-            <li>Both fields use similar excavation techniques and study the past, which often leads to public confusion.</li>
+            <li>Both fields use similar excavation techniques and study the past, which often leads
+              to public confusion.
+            </li>
             <li>There is occasional overlap, especially with very old human remains (<a
                 href="https://en.wikipedia.org/wiki/Prehistoric_archaeology">prehistoric
-                archaeology</a>).</li>
-            <li>Because dinosaur fossils are not part of human culture, they are paleontological, not archaeological—even though both fields study old things from the ground.</li>
+              archaeology</a>).
+            </li>
+            <li>Because dinosaur fossils are not part of human culture, they are paleontological,
+              not archaeological—even though both fields study old things from the ground.
+            </li>
           </ul>
         </div>
 
         <div class="box">
           <b>Archaeologists:</b> Study the past scientifically to understand human history.
           <ul>
-            <li><b>Focus:</b> Emphasize <b>context, preservation</b>, and sharing knowledge with the public.</li>
+            <li><b>Focus:</b> Emphasize <b>context, preservation</b>, and sharing knowledge with the
+              public.
+            </li>
             <li><b>Methods:</b> Use <b>meticulous techniques</b>, such as forensic analysis.</li>
           </ul>
           <b>Treasure Hunters:</b> Seek valuable items for personal profit rather than research.
           <ul>
-            <li><b>Impact:</b> Often destroy <b>historical context</b> by selling artifacts, treating sites as commercial resources.</li>
-            <li><b>Consequence:</b> Deprives researchers and the public of a comprehensive understanding of historical records.</li>
+            <li><b>Impact:</b> Often destroy <b>historical context</b> by selling artifacts,
+              treating sites as commercial resources.
+            </li>
+            <li><b>Consequence:</b> Deprives researchers and the public of a comprehensive
+              understanding of historical records.
+            </li>
           </ul>
         </div>
       </section>
@@ -838,6 +904,24 @@
     <div id="tab-robotics" style="display:none;">
       <section>
         <h2>Our Road to Robot Success!</h2>
+        <ul>
+          <li>Our game strategy is unique because of our smart use of the color sensor and custom
+            block coding.
+          </li>
+          <li>We use the color sensor to switch each run’s program, which helps us save time during
+            matches.
+          </li>
+          <li>Our block coding allows us to program movements and actions with high precision.</li>
+          <li>We use a universal baseplate docking system for all attachments, making installation
+            fast and easy.
+          </li>
+          <li>Each attachment went through at least three iterations to ensure reliable
+            performance.
+          </li>
+          <li>Our team was recognized with the Robot Game Award in both the scrimmage and the
+            qualifier.
+          </li>
+        </ul>
         <div id="robot-identify">
           <h2 class="subsection-title">Identify</h2>
           <h3 id="robot-strategy">• Tackle tough problems with strategic clarity</h3>
@@ -869,7 +953,7 @@
             <div class="img-grid-3" aria-label="Sources Used for Robot Designs">
               <figure>
                 <figcaption>Lego Robot Game Rule Book</figcaption>
-              <img src="images/LegoRuleBook.png" alt="Lego Robot Game Rule Book">
+                <img src="images/LegoRuleBook.png" alt="Lego Robot Game Rule Book">
               </figure>
               <figure>
                 <figcaption>Lego Tutorials - Robot Designs</figcaption>
@@ -899,12 +983,12 @@
         <div id="robot-design">
           <h2 class="subsection-title">Design:</h2>
           <h3 id="robot-features">• Our Base Robots Key Features:</h3>
-            <ul>
-              <li>Box design for easy alignment.</li>
-              <li>Universal docking system for attachment easy on and off.</li>
-              <li>Color sensor-driven code change.</li>
-              <li>Reliable going straight and turn.</li>
-            </ul>
+          <ul>
+            <li>Box design for easy alignment.</li>
+            <li>Universal docking system for attachment easy on and off.</li>
+            <li>Color sensor-driven code change.</li>
+            <li>Reliable going straight and turn.</li>
+          </ul>
           <div class="box">
             <div class="img-stack" aria-label="Plan smart routes">
               <img src="images/AshBot.png" alt="Reuse attachments for multiple missions">
@@ -928,7 +1012,8 @@
               <figure>
                 <img src="images/OurRobotGamePlan.png" alt="Our Robot Workflow">
                 <figcaption>480 points so far with 95% confidence, and we are continuously iterating
-                  to improve accuracy and performance</figcaption>
+                  to improve accuracy and performance
+                </figcaption>
               </figure>
             </div>
           </div>
@@ -958,7 +1043,8 @@
               <img src="images/Code3.png" alt="Code 3">
             </div>
           </div>
-          (reference: <a href="https://primelessons.org">Prime Lessons</a> website and Huaxia Chinese School FLL code library)
+          (reference: <a href="https://primelessons.org">Prime Lessons</a> website and Huaxia
+          Chinese School FLL code library)
         </div>
 
         <div id="robot-iterate">
@@ -980,7 +1066,7 @@
 
         <div id="robot-communicate">
           <h2 class="subsection-title">Communication</h2>
-          <h3 id="robot-impact">Teamwork, Communication & Fun Times</h3>
+          <h3 id="robot-impact">• Teamwork, Communication & Fun Times</h3>
           <div class="box">
             <div class="img-stack" aria-label="Teamwork Communication Fun Time">
               <figure>
@@ -998,9 +1084,13 @@
     <!-- Event -->
     <div id="tab-event" style="display:none;">
       <section>
-        <h3 id="event1">Event1</h3>
-
-        <h3 id="event2">Event1</h3>
+        <h3 id="event-wcu">• Visit WestChester University Museum of Anthropology and
+          Archaeology</h3>
+        <h3 id="event-penn">• Visit Penn Museum</h3>
+        <h3 id="event-scrimmage">• FLL Scrimmage</h3>
+        <h3 id="event-qualify">• FLL Qualifier</h3>
+        <h3 id="event-regional">• FLL Regional</h3>
+        <h3 id="event-state">• FLL State</h3>
       </section>
     </div>
 
@@ -1008,27 +1098,67 @@
     <!-- Team Tab -->
     <div id="tab-team" style="display:none;">
       <section>
-        <h2 id="team-bios">Meet the Lego-ologists</h2>
-        <div class="box">A team of dedicated students, designers, and engineers.</div>
+        <h3 id="team-bios">• Meet the Lego-ologists</h3>
+        <div class="box">
+          <div class="img-stack" aria-label="Lego-ologists">
+            <figure>
+              <figcaption>A team of dedicated students, designers, and engineers.</figcaption>
+              <img src="images/Lego-ologist.png" alt="Lego-ologists">
+            </figure>
+            <img src="images/Allen.jpg" id="team-allen" alt="Allen">
+            <img src="images/Annabel.jpg" id="team-annabel" alt="Annabel">
+            <img src="images/Ashley.jpg" id="team-ashley" alt="Ashley">
+            <img src="images/Benjamin.jpg" id="team-ben" alt="Benjamin">
+            <img src="images/Daniel.jpg" id="team-dan" alt="Daniel">
+            <img src="images/Henry.jpg" id="team-henry" alt="Henry">
+            <img src="images/JJ.jpg" id="team-jj" alt="JJ">
+          </div>
+        </div>
+
+        <h3 id="team-coach">• Coaches</h3>
+        <div class="box">
+          <h3 id="team-zhuge">• Xing Zhuge</h3>
+          <h3 id="team-xue">• Wenqin Xue</h3>
+        </div>
+
         <h2 id="team-values">Core Values</h2>
-        <div class="box">Gracious Professionalism, Coopertition, and Teamwork.</div>
+        <ul>
+          <li>We learned that in team competitions, success depends on working closely with
+            teammates—not just to win, but to encourage and inspire each other.
+          </li>
+          <li>When one of our runs had a lower success rate, we put our heads together and shared
+            ideas to improve.
+          </li>
+          <li>This is a continuous learning process where we keep finding better ways to contribute
+            positively to the whole team.
+          </li>
+          <li>Even in tough situations, we focus on supporting each other.</li>
+          <li>Most importantly, we strive to be honest with people and act with humility.</li>
+        </ul>
+
+        <h2 id="team-fun">Fun Facts About Our Team</h2>
+        <ul>
+          <li>We work hard, stay positive, and achieve strong scores in competitions.</li>
+          <li>At the same time, we have a great time together and build friendships.</li>
+          <li>Funny moments—even embarrassing ones—often bring our team closer.</li>
+          <li>These moments usually turn into joyful scenes where everyone laughs and unites.</li>
+          <li>For example, during a robot game practice full run, a team member’s head
+            accidentally blocked the robot’s arm.
+          </li>
+          <li>It stopped the run and led to lots of laughter—including from the teammate
+            involved.
+          </li>
+        </ul>
+
       </section>
     </div>
 
-    <!-- Gallery Tab -->
-    <div id="tab-gallery" style="display:none;">
-      <section>
-        <h3 id="gallery1">Gallery 1</h3>
-
-        <h3 id="gallery2">Gallery 2</h3>
-      </section>
-    </div>
   </main>
 </div>
 
 <script>
   const tabs = document.querySelectorAll(".tab-btn");
-  const tabIds = ["innovation", "game", "gamedev", "robotics", "event", "team", "gallery"];
+  const tabIds = ["innovation", "game", "gamedev", "robotics", "event", "team"];
 
   // Map anchor IDs to tabs
   const anchorToTab = {
@@ -1079,16 +1209,31 @@
     "robot-communicate": "robotics",
 
     // Event
-    "event1": "event",
-    "event2": "event",
+    "event-wcu": "event",
+    "event-penn": "event",
+    "event-scrimmage": "event",
+    "event-qualify": "event",
+    "event-regional": "event",
+    "event-state": "event",
 
     // Team
     "team-bios": "team",
-    "team-values": "team",
 
-    // Event
-    "gallery1": "gallery",
-    "gallery2": "gallery",
+    "team-allen": "team",
+    "team-annabel": "team",
+    "team-ashley": "team",
+    "team-ben": "team",
+    "team-dan": "team",
+    "team-henry": "team",
+    "team-jj": "team",
+
+    "team-zhuge": "team",
+    "team-xue": "team",
+
+    "team-coach": "team",
+    "team-values": "team",
+    "team-fun": "team",
+
   };
 
   function activateTab(target) {
@@ -1099,18 +1244,24 @@
     tabIds.forEach(id => {
       const tab = document.getElementById(`tab-${id}`);
       const toc = document.getElementById(`${id}-toc`);
-      if (tab) tab.style.display = (id === target) ? "block" : "none";
-      if (toc) toc.style.display = (id === target) ? "block" : "none";
+      if (tab) {
+        tab.style.display = (id === target) ? "block" : "none";
+      }
+      if (toc) {
+        toc.style.display = (id === target) ? "block" : "none";
+      }
     });
   }
 
   function scrollToHash(hash) {
-    if (!hash) return;
+    if (!hash) {
+      return;
+    }
     const id = hash.replace("#", "");
     const el = document.getElementById(id);
     if (el) {
       setTimeout(() => {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        el.scrollIntoView({behavior: "smooth", block: "start"});
       }, 50); // wait for layout after the tab switch
     }
   }
@@ -1126,7 +1277,9 @@
   // Handle clicks on any in-page anchor links (TOC)
   document.addEventListener("click", (e) => {
     const link = e.target.closest("a[href^='#']");
-    if (!link) return;
+    if (!link) {
+      return;
+    }
 
     const hash = link.getAttribute("href");
     const id = hash.replace("#", "");
