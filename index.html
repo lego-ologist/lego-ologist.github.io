@@ -299,7 +299,7 @@
     }
 
     .site-header {
-      position: relative;   /* anchor for absolute positioning */
+      position: relative; /* anchor for absolute positioning */
       padding: 10px 10px;
       text-align: center;
     }
@@ -456,8 +456,8 @@
         <a href="#dev-overview">Game Development Overview</a>
         <ol>
           <li><a href="#dev-research">Research & Inspiration</a></li>
-          <li><a href="#dev-platform">Platform & Concept Decision</a></li>
-          <li><a href="#dev-roles">Core Gameplay Roles</a></li>
+          <li><a href="#dev-platform">Decision, Concept, and Prototype</a></li>
+          <li><a href="#dev-roles">First Implementation</a></li>
           <li><a href="#dev-integration">Design Integration</a></li>
           <li><a href="#dev-planning">Planning & Task Distribution</a></li>
           <li><a href="#dev-workflow">Development Workflow</a></li>
@@ -740,25 +740,41 @@
           </ul>
         </div>
 
-        <h3 id="dev-platform">• Platform & Concept Decision</h3>
+        <h3 id="dev-platform">• Decision, Concept, and Prototype</h3>
         <div class="box">
-          The team discussed how to turn the educational concept into a fun and accessible game.
+          The team discussed how to turn our educational idea into a fun and accessible game.
           <ul>
-            <li>Existing educational games were informative but too simple</li>
-            <li>We decided to expand the idea into a more engaging experience</li>
-            <li>Roblox was chosen for its accessibility and audience fit</li>
-            <li>The team reached a consensus in this direction</li>
+            <li>Unlike most archaeology-themed games: unrealistic, inaccurate, goal-misrepresenting,
+              and educationally weak.
+            </li>
+            <li>Different from rare educational games that are informative but too simple to stay
+              engaging.
+            </li>
+            <li>We decided to expand the idea into a more immersive Roblox experience.</li>
+            <li>
+              The team agreed on <b>Dig It Right!</b>, a fun, realistic, and educational game using
+              real tools, processes, and roles, with careful excavation, data recording, and museum
+              building.
+            </li>
           </ul>
+          <div class="img-grid-3" aria-label="Plan smart routes">
+            <img src="images/ExistingGames.jpg" alt="Existing Games">
+            <img src="images/OurInnovation.jpg" alt="Our Innovation">
+            <img src="images/OurPrototype.jpg" alt="Our Prototype">
+          </div>
         </div>
 
-        <h3 id="dev-roles">• Core Gameplay Roles</h3>
+        <h3 id="dev-roles">• Virtual Dig Site: First Implementation</h3>
         <div class="box">
           We designed three main roles to represent real archaeological work.
           <ul>
-            <li><b>Excavator:</b> Introductory role for Level 1</li>
-            <li><b>Analyst:</b> Advanced role for Level 2</li>
-            <li><b>Recorder:</b> Companion character with a notebook and camera</li>
-            <li>Each role reflects real responsibilities in an excavation team</li>
+            <li><b>Excavator:</b> The primary role in this version, responsible for digging.</li>
+            <li><b>Analyst:</b> Provides GPS to track locations and glue to piece artifacts
+              together.
+            </li>
+            <li><b>Recorder:</b> Accompanies the excavator, documenting discoveries with a notebook
+              and camera.
+            </li>
           </ul>
           <div class="img-stack" aria-label="Plan smart routes">
             <img src="images/GameRoles.png" alt="Game Roles">
@@ -770,6 +786,9 @@
           Archaeological tools and actions were integrated directly into gameplay.
           <ul>
             <li>Tools were mapped to real excavation steps</li>
+            <li>Replace drones and ground penetrating radar with magnetometer for easier
+              implementation
+            </li>
             <li>New mechanics are introduced as players dig deeper</li>
             <li>Gameplay follows a realistic excavation workflow</li>
           </ul>
@@ -906,7 +925,8 @@
             <img src="images/AfterWithGuidance.png" alt="Tools After">
           </figure>
         </div>
-        <h3 id="dev-proud">We are very proud to be the first Roblox game to practice real archaeology, correct common
+        <h3 id="dev-proud">We are very proud to make the first Roblox game to practice real
+          archaeology, correct common
           misconceptions, and stand out among educational archaeology games as both engaging and
           fun.
         </h3>
@@ -956,7 +976,8 @@
                   allowfullscreen>
               </iframe>
             </div>
-          </div>          <br/>
+          </div>
+          <br/>
           Does our demo leave you feeling like just another treasure-hunt game? If so, we invite you
           to dive deeper:<br/>
           Experience an immersive environment designed to provide a genuine
