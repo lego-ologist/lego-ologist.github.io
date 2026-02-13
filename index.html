@@ -218,6 +218,13 @@
       margin: 14px; /* centers the stack under text */
     }
 
+    .img-stack video {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .img-grid-2 img,
     .img-stack img,
     .img-stack-1k img {
@@ -692,16 +699,24 @@
         <div class="box">
           We began by studying existing archaeology-related games and educational resources.
           <ul>
-            <li>Most existing games focus on combat or treasure hunting</li>
+            <li>Most existing games focus on combat or treasure hunting
+              <div class="img-stack" aria-label="Plan smart routes">
+                <img src="images/RobloxArchaeology.png" alt="Roblox Archaeology Game">
+              </div>
+            </li>
             <li>Very few represent real archaeological practice</li>
             <li><a href="https://www.amnh.org/explore/ology/archaeology/tools-of-the-trade2"
                    target="_blank" rel="noopener noreferrer">
-              Tools of the Trade</a> of American Museum of Natural History from
+              Tools of the Trade</a> of the American Museum of Natural History from
               <a href="https://sciencetrek.org/topics/archaeology/games" target="_blank"
                  rel="noopener noreferrer">Science Trek</a> was
               identified as a strong educational reference
+              <div class="img-stack" aria-label="Plan smart routes">
+                <img src="images/AMNH_ArchaeologyGame.png" alt="Roblox Archaeology Game">
+              </div>
+
             </li>
-            <li>Our goal was to build something more engaging and more accurate</li>
+            <li>Our goal was to build something more <b>engaging</b> and more <b>accurate</b></li>
           </ul>
         </div>
 
@@ -725,6 +740,9 @@
             <li><b>Recorder:</b> Companion character with a notebook and camera</li>
             <li>Each role reflects real responsibilities in an excavation team</li>
           </ul>
+          <div class="img-stack" aria-label="Plan smart routes">
+            <img src="images/GameRoles.png" alt="Game Roles">
+          </div>
         </div>
 
         <h3 id="dev-integration">• Design Integration</h3>
@@ -735,6 +753,9 @@
             <li>New mechanics are introduced as players dig deeper</li>
             <li>Gameplay follows a realistic excavation workflow</li>
           </ul>
+          <div class="img-stack" aria-label="Plan smart routes">
+            <img src="images/ArchaeologicalTools.png" alt="Archaeological Tools">
+          </div>
         </div>
 
         <h3 id="dev-planning">• Planning & Task Distribution</h3>
@@ -746,6 +767,11 @@
             <li>The remaining tasks were distributed evenly</li>
             <li>This ensured a balanced workload across the team</li>
           </ul>
+          <div class="img-grid-3" aria-label="Plan smart routes">
+            <img src="images/GameItems1.png" alt="Game Items 1">
+            <img src="images/GameItems2.png" alt="Game Items 2">
+            <img src="images/GameItems3.png" alt="Game Items 3">
+          </div>
         </div>
 
         <h3 id="dev-workflow">• Development Workflow</h3>
@@ -757,6 +783,13 @@
             <li>Roblox <b>Live Collaborators</b> was used to merge work</li>
             <li>Frequent integration and testing improved stability</li>
           </ul>
+          <div class="img-stack" aria-label="Plan smart routes">
+            <figure>
+              <figcaption>Live Collaborators and Team Work for our next "Dig It Right 2.0!"
+              </figcaption>
+              <img src="images/LiveCollaborators.png" alt="Live Collaborators and Team Work">
+            </figure>
+          </div>
         </div>
 
         <h3 id="dev-versioning">• Version Control & Iteration</h3>
@@ -767,6 +800,13 @@
             <li>Hundreds of versions were created during development</li>
             <li>Each version represented an iteration or improvement</li>
           </ul>
+          <div class="img-stack" aria-label="Plan smart routes">
+            <figure>
+              <figcaption>700+ Roblox versions (as of 2/12/2026) through ongoing improvements
+              </figcaption>
+              <img src="images/VersionHistoryAndRestore.png" alt="Game Versions">
+            </figure>
+          </div>
         </div>
 
         <h3 id="dev-review">• Expert Review</h3>
@@ -778,6 +818,12 @@
             <li>Feedback was based on real-world archaeology practices</li>
             <li>Confirmed overall accuracy of the game’s approach</li>
           </ul>
+          <div class="img-stack" aria-label="Student Sifting">
+            <video controls>
+              <source src="videos/SilberLecture.mov" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
 
         <h3 id="dev-feedback">• Key Feedback</h3>
@@ -790,6 +836,13 @@
             <li>Add protective gear and water for excavators</li>
             <li>Add NPCs or hints to guide players and highlight the dig site</li>
           </ul>
+          <div class="img-stack" aria-label="Student Sifting">
+            <video controls>
+              <source src="videos/StudentsSifting.mov" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
         </div>
 
         <h3 id="dev-result">• Final Result</h3>
@@ -821,8 +874,14 @@
         <div class="box">
           Oftentimes, news is mistakenly categorized under it:
           <div class="img-stack" aria-label="Mistaken News">
-            <img src="images/WrongNews1.png" alt="Wrong News 2" style="height: 90%;">
-            <img src="images/WrongNews2.png" alt="Wrong News 2">
+            <a href="https://nypost.com/2025/11/29/science/student-finds-150-million-year-old-dinosaur-fossil-on-first-day-of-dig/"
+               target="_blank" rel="noopener noreferrer">
+              <img src="images/WrongNews1.png" alt="Wrong News 2" style="height: 90%;">
+            </a>
+            <a href="https://www.finestresullarte.info/en/archaeology/dinosaur-fossil-discovered-under-denver-museum-parking-lot"
+               target="_blank" rel="noopener noreferrer">
+              <img src="images/WrongNews2.png" alt="Wrong News 2">
+            </a>
           </div>
           Can you spot what’s wrong in the images and news titles above?
         </div>
@@ -851,7 +910,7 @@
           <h3>Play our Roblox game <a
               href="https://www.roblox.com/games/85800684472755/Dig-it-Right"
               target="_blank" rel="noopener noreferrer">
-            Dig It Right!</a> and invite your friends with the game QR code:
+            Dig It Right!</a>, and invite your friends with the game QR code:
           </h3>
           <div aria-label="QR">
             <img src="images/GameQR.png" style="height: 90%; width: 90%" alt="QR">
@@ -869,7 +928,7 @@
             <li>Both fields use similar excavation techniques and study the past, which often leads
               to public confusion.
             </li>
-            <li>There is occasional overlap, especially with very old human remains (<a
+            <li>There is occasional overlap, especially with ancient human remains (<a
                 href="https://en.wikipedia.org/wiki/Prehistoric_archaeology">prehistoric
               archaeology</a>).
             </li>
@@ -987,7 +1046,7 @@
             <li>Box design for easy alignment.</li>
             <li>Universal docking system for attachment easy on and off.</li>
             <li>Color sensor-driven code change.</li>
-            <li>Reliable going straight and turn.</li>
+            <li>Reliable going straight and turning.</li>
           </ul>
           <div class="box">
             <div class="img-stack" aria-label="Plan smart routes">
@@ -1105,6 +1164,7 @@
               <figcaption>A team of dedicated students, designers, and engineers.</figcaption>
               <img src="images/Lego-ologist.png" alt="Lego-ologists">
             </figure>
+            <img src="images/DifferentRolesOneTeam.png" alt="Allen">
             <img src="images/Allen.jpg" id="team-allen" alt="Allen">
             <img src="images/Annabel.jpg" id="team-annabel" alt="Annabel">
             <img src="images/Ashley.jpg" id="team-ashley" alt="Ashley">
@@ -1117,8 +1177,8 @@
 
         <h3 id="team-coach">• Coaches</h3>
         <div class="box">
-          <h3 id="team-zhuge">• Xing Zhuge</h3>
           <h3 id="team-xue">• Wenqin Xue</h3>
+          <h3 id="team-zhuge">• Xing Zhuge</h3>
         </div>
 
         <h2 id="team-values">Core Values</h2>
