@@ -218,7 +218,8 @@
       margin: 14px; /* centers the stack under text */
     }
 
-    .img-stack video {
+    .img-stack video,
+    .img-stack iframe {
       max-width: 100%;
       width: 100%;
       height: auto;
@@ -714,7 +715,6 @@
               <div class="img-stack" aria-label="Plan smart routes">
                 <img src="images/AMNH_ArchaeologyGame.png" alt="Roblox Archaeology Game">
               </div>
-
             </li>
             <li>Our goal was to build something more <b>engaging</b> and more <b>accurate</b></li>
           </ul>
@@ -842,7 +842,6 @@
               Your browser does not support the video tag.
             </video>
           </div>
-
         </div>
 
         <h3 id="dev-result">• Final Result</h3>
@@ -890,11 +889,12 @@
         <div class="box" aria-label="Mistaken News">
           Here is our <a href="https://www.youtube.com/watch?v=yCqBKxZDACw" target="_blank"
                          rel="noopener noreferrer">game demo</a>:<br/>
-          <iframe width="800" height="450"
-                  src="https://www.youtube.com/embed/yCqBKxZDACw?si=vDVp3tJ1-2GMoAlY"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="img-stack" aria-label="Plan smart routes">
+            <iframe src="https://www.youtube.com/embed/yCqBKxZDACw?si=vDVp3tJ1-2GMoAlY"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
           <br/>
           Does our demo leave you feeling like just another treasure-hunt game? If so, we invite you
           to dive deeper:<br/>
