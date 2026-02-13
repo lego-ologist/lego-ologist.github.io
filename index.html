@@ -298,13 +298,18 @@
       font-size: 2rem;
     }
 
+    .site-header {
+      position: relative;   /* anchor for absolute positioning */
+      padding: 10px 10px;
+      text-align: center;
+    }
+
     .logo-float {
-      position: fixed; /* sticks to viewport */
+      position: absolute; /* sticks to viewport */
       top: 16px;
       right: 16px; /* <-- right instead of left */
-      height: 156px; /* adjust size */
+      height: 140px; /* adjust size */
       width: auto; /* keep aspect ratio */
-      z-index: 1000;
     }
 
     /* Mobile optimization (keeps your original behavior) */
@@ -393,7 +398,7 @@
 </head>
 <body>
 
-<header>
+<header class="site-header">
   <h1 class="page-title">Lego-ologist Team</h1>
   <img src="images/Lego-ologist.png" alt="Logo" class="logo-float">
   <div class="tabs">
@@ -460,6 +465,7 @@
           <li><a href="#dev-review">Expert Review</a></li>
           <li><a href="#dev-feedback">Key Feedback</a></li>
           <li><a href="#dev-result">Final Result</a></li>
+          <li><a href="#dev-proud">Proud</a></li>
         </ol>
       </nav>
     </div>
@@ -476,7 +482,6 @@
     <!-- Robotics TOC -->
     <div id="robotics-toc" style="display:none;">
       <nav class="toc">
-
         <details open>
           <summary>Identify</summary>
           <a href="#robot-strategy">• Tackle tough problems</a>
@@ -869,6 +874,43 @@
             <li>Clear improvement over the initial prototype</li>
           </ul>
         </div>
+        <div class="img-stack" aria-label="Diff Tools">
+          <figure>
+            <figcaption>Before, No Water Bottle, Sifting Screen</figcaption>
+            <img src="images/ToolsBefore.png" alt="Tools Before">
+          </figure>
+          <figure>
+            <figcaption>After, With Water Bottle and Sifting Screen</figcaption>
+            <img src="images/ToolsAfter.png" alt="Tools After">
+          </figure>
+        </div>
+        <hr>
+        <div class="img-stack" aria-label="Diff Tools">
+          <figure>
+            <figcaption>Before, Square Dig Site, No Layer</figcaption>
+            <img src="images/DigSiteBefore.png" alt="Tools Before">
+          </figure>
+          <figure>
+            <figcaption>After, Irregular Dig Site, With Layers</figcaption>
+            <img src="images/DigSiteAfter.png" alt="Tools After">
+          </figure>
+        </div>
+        <hr>
+        <div class="img-stack" aria-label="Diff Tools">
+          <figure>
+            <figcaption>Before, No Guidance</figcaption>
+            <img src="images/BeforeWithoutGuidance.png" alt="Tools Before">
+          </figure>
+          <figure>
+            <figcaption>After, With Guidance</figcaption>
+            <img src="images/AfterWithGuidance.png" alt="Tools After">
+          </figure>
+        </div>
+        <h3 id="dev-proud">We are very proud to be the first Roblox game to practice real archaeology, correct common
+          misconceptions, and stand out among educational archaeology games as both engaging and
+          fun.
+        </h3>
+
       </section>
     </div>
 
@@ -1194,11 +1236,11 @@
           </div>
         </div>
 
-        <h3 id="team-coach">• Coaches</h3>
-        <div class="box">
-          <h3 id="team-xue">• Wenqin Xue</h3>
-          <h3 id="team-zhuge">• Xing Zhuge</h3>
-        </div>
+        <h2 id="team-coach">Coaches</h2>
+        <ul>
+          <li id="team-xue">Wenqin Xue</li>
+          <li id="team-zhuge">Xing Zhuge</li>
+        </ul>
 
         <h2 id="team-values">Core Values</h2>
         <ul>
@@ -1265,6 +1307,7 @@
     "dev-review": "gamedev",
     "dev-feedback": "gamedev",
     "dev-result": "gamedev",
+    "dev-proud": "gamedev",
 
     // Our Game
     "game-misconception": "game",
