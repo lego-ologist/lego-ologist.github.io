@@ -5,29 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Q&A Session</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; padding: 40px; }
-    .qa-container { background: white; width: 100%; max-width: 1600px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f4f7f6;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .qa-container {
+      background: white;
+      width: 100%;
+      max-width: 1600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
 
     /* Tab Headers */
-    .tabs { display: flex; border-bottom: 1px solid #eee; background: #fafafa; }
-    .tab-btn { flex: 1; padding: 15px; border: none; background: none; cursor: pointer; font-weight: 600; color: #666; transition: 0.3s; }
-    .tab-btn:hover { background: #f0f0f0; }
-    .tab-btn.active { color: #2563eb; border-bottom: 2px solid #2563eb; background: white; }
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #eee;
+      background: #fafafa;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-weight: 600;
+      color: #666;
+      transition: 0.3s;
+    }
+
+    .tab-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .tab-btn.active {
+      color: #2563eb;
+      border-bottom: 2px solid #2563eb;
+      background: white;
+    }
 
     /* Content Area */
-    .tab-content { display: none; padding: 25px; animation: fadeIn 0.4s; }
-    .tab-content.active { display: block; }
+    .tab-content {
+      display: none;
+      padding: 25px;
+      animation: fadeIn 0.4s;
+    }
 
-    .qa-item { margin-bottom: 20px; }
-    .question { font-weight: 700; color: #1e293b; margin-bottom: 5px; display: block; }
-    .answer { color: #475569; line-height: 1.5; font-size: 0.95rem; }
+    .tab-content.active {
+      display: block;
+    }
 
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .qa-item {
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .answer {
+      color: #475569;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
 <div class="qa-container">
-  <h1>This page provide links navigating our website to help explain our work</h1>
+  <h1>We use this page to help explain our work by navigating our website</h1>
   <div class="tabs">
     <button class="tab-btn active" onclick="openTab(event, 'general')">Innovation Basic</button>
     <button class="tab-btn" onclick="openTab(event, 'technical')">Innovation Extra</button>
@@ -37,37 +102,51 @@
   <!-- General Tab -->
   <div id="general" class="tab-content active">
     <div class="qa-item">
-      <span class="question">1. How did you ensure that everyone had an important task to do and that their work was valued by the team?</span>
-      <p class="answer">Link: We sorted our tasks by importance. Then <a href="index.html#dev-planning">team members selected items based on interest</a></p>
+      <span class="question">1. How did you ensure that everyone had an important task to do and
+        that their work was valued by the team?</span>
+      <p class="answer">Link: We sorted our tasks by importance. Then
+        <a href="index.html#dev-planning">team members selected items based on interest</a></p>
     </div>
     <div class="qa-item">
-      <span class="question">2. Describe the steps your team took to develop your project solution.</span>
-      <p class="answer">Link: <a href="index.html#design-process">We brainstormed multiple ideas as a team.</a></p>
+      <span class="question">2. Describe the steps your team took to develop your project solution.
+      </span>
+      <p class="answer">Link: <a href="index.html#design-process">We brainstormed multiple ideas as
+        a team.</a></p>
     </div>
     <div class="qa-item">
-      <span class="question">3. What have you been using to help explain and share your solution with others?</span>
-      <p class="answer">Link: <a href="index.html">Our website</a> to explain and <a href="index.html#game-play">QR code</a> to share our game</p>
+      <span class="question">3. What have you been using to help explain and share your solution
+        with others?</span>
+      <p class="answer">Link: We have been using <a href="index.html">our website</a> to explain and
+        <a href="index.html#game-play">QR code</a> to share our game</p>
     </div>
     <div class="qa-item">
-      <span class="question">4. Who did you choose to share your solution with, and what did they say?</span>
-      <p class="answer">Link: <a href="index.html#dev-review">Dr. Giovine, Prof. Silber and their students.</a></p>
+      <span class="question">4. Who did you choose to share your solution with, and what did they
+        say?</span>
+      <p class="answer">Link: <a href="index.html#dev-review">Dr. Giovine, Prof. Silber and their
+        students.</a></p>
     </div>
     <div class="qa-item">
-      <span class="question">5. Did you make any changes or improvements after sharing your solution, and, if so, what did you change?</span>
-      <p class="answer">Link: Yes, <a href="index.html#dev-result">a lot of improvements</a> after sharing</p>
+      <span class="question">5. Did you make any changes or improvements after sharing your solution
+        , and if so, what did you change?</span>
+      <p class="answer">Link: Yes, <a href="index.html#dev-result">a lot of improvements</a> after
+        sharing</p>
     </div>
     <div class="qa-item">
-      <span class="question">6. How will your solution help others and has your solution already made an impact on your community?</span>
-      <p class="answer">Link: Yes, <a href="index.html#comm-impact">114 friends and classmates played our game</a></p>
+      <span class="question">6. How will your solution help others and has your solution already
+        made an impact on your community?</span>
+      <p class="answer">Link: Yes, <a href="index.html#comm-impact">114 friends and classmates
+        played our game</a></p>
     </div>
   </div>
 
   <!-- Technical Tab -->
   <div id="technical" class="tab-content">
     <div class="qa-item">
-      <span class="question">E1. How did your team divide the work for your innovation project?</span>
+      <span
+          class="question">E1. How did your team divide the work for your innovation project?</span>
       <p class="answer">Link: We have a lot of game items and assets
-        to develop. First <a href="index.html#dev-planning">Team members selected items based on interest</a></p>
+        to develop. First <a href="index.html#dev-planning">Team members selected items based on
+          interest</a></p>
     </div>
     <div class="qa-item">
       <span class="question">E2. How did you make sure everyone’s work was valued?</span>
@@ -78,72 +157,118 @@
     <div class="qa-item">
       <span class="question">E3. What is innovative about your solution?</span>
       <p class="answer">Link: Our game is the first Roblox game <a href="index.html#dev-proud">
-        to practice real archaeology</a></p>
+        that practices real archaeology</a></p>
     </div>
     <div class="qa-item">
-      <span class="question">E4. What makes your idea different from other solutions you discovered in your research?</span>
-      <p class="answer">Link: </p>
+      <span class="question">E4. What makes your idea different from other solutions you discovered
+        in your research?</span>
+      <p class="answer">Link: Our game is the first Roblox game <a href="index.html#dev-proud">
+        that practices real archaeology</a></p>
     </div>
     <div class="qa-item">
-      <span class="question">E5. Describe the different parts of your model / drawing / prototype and what they represent?</span>
-      <p class="answer">Link: </p>
+      <span class="question">E5. Describe the different parts of your model / drawing / prototype
+        and what they represent?</span>
+      <p class="answer">Link: We have 3 roles: Excavator, Analyst, Recorder like a real field crew
+        in <a href="index.html#dev-platform">our prototype</a></p>
     </div>
     <div class="qa-item">
       <span class="question">E6. Who did you share your solution with for feedback?</span>
-      <p class="answer">Link: </p>
+      <p class="answer">Link: <a href="index.html#dev-review">Dr. Giovine, Prof. Silber and their
+        students.</a></p>
     </div>
     <div class="qa-item">
-      <span class="question">E7. What changes or improvements did you make to your project throughout the process?</span>
-      <p class="answer">Link: </p>
+      <span class="question">E7. What changes or improvements did you make to your project
+        throughout the process?</span>
+      <p class="answer">Link: <a href="index.html#dev-result">a lot of improvements here</a></p>
     </div>
     <div class="qa-item">
       <span class="question">E8. How did the changes improve your solution?</span>
-      <p class="answer">Link: </p>
+      <p class="answer">Link: they provide <a href="index.html#dev-result">more realistic excavation
+        experience and more engaging and educational gameplay</a></p>
     </div>
     <div class="qa-item">
       <span class="question">E9. How could your solution help others?</span>
-      <p class="answer">Link: </p>
+      <p class="answer">Link: It helps correct common archaeology misconceptions by
+        <a href="index.html#comm-reach">transforming archaeology education for kids</a></p>
     </div>
     <div class="qa-item">
-      <span class="question">E10. What has been your team’s favorite part of working on your project this season and why?</span>
-      <p class="answer">Link: </p>
+      <span class="question">E10. What has been your team’s favorite part of working on your project
+        this season and why?</span>
+      <p class="answer">Link: Share our games with others and see it help correct common
+        misconceptions about archaeology with <a href="index.html#dev-proud">high rating and more
+          visits</a></p>
     </div>
     <div class="qa-item">
       <span class="question">E11. What are you most proud of in regards to your project?</span>
-      <p class="answer">Link: </p>
+      <p class="answer">Link: With great rating, I am very proud to make the first Roblox game to
+        <a href="index.html#dev-proud">practice real archaeology</a></p>
     </div>
     <div class="qa-item">
-      <span class="question">E12. If you could work with any expert or organization in the world on your solution, who would it be?</span>
-      <p class="answer">Link: </p>
+      <span class="question">E12. If you could work with any expert or organization in the world on
+        your solution, who would it be?</span>
+      <p class="answer">Link: Archaeologists of the American Museum of Natural History, because we
+        make a Roblox version of their game and render the archaeology process more entertaining. In
+        fact,
+        I wrote an email to me and received positive feedback from a phone call:
+      </p>
+    </div>
+    <hr/>
+    <blockquote>
+      <img src="images/RequestToAMNH.png" alt="email" style="width: 100%; height: 100%;">
+    </blockquote>
+    <hr/>
+
+    <div class="qa-item">
+      <span class="question">E13. If you had more time to work on your project, what would you do
+        next?</span>
+      <p class="answer">Link: The next level of our game: <a href="index.html#dev-platform">
+        Artifact Lab, fulfilling the Analyst role</a></p>
     </div>
     <div class="qa-item">
-      <span class="question">E13. If you had more time to work on your project, what would you do next?</span>
-      <p class="answer">Link: </p>
-    </div>
-    <div class="qa-item">
-      <span class="question">E14. Do you have any iteration of your prototype? If yes, what is the iteration process?</span>
-      <p class="answer">Link: </p>
+      <span class="question">E14. Do you have any iteration of your prototype? If yes, what is the
+        iteration process?</span>
+      <p class="answer">Link: Yes, we met every Tuesday and Thursday using
+        <a href="index.html#dev-workflow">Roblox Live Collaborators</a> to improve our features and
+        address players' feedback. As a result of this process, we currently already have 700+
+        Roblox versions.
+      </p>
     </div>
   </div>
 
   <!-- Pricing Tab -->
   <div id="pricing" class="tab-content">
     <div class="qa-item">
-      <span class="question">Describe the toughest challenge your team faced and how you overcame it.</span>
-      <p class="answer">Link: </p>
-    </div>
-    <div class="qa-item">
-      <span class="question">Of all the things your team accomplished, what are you most proud of?</span>
-      <p class="answer">Link: </p>
+      <span
+          class="question">Of all the things your team accomplished, what are you most proud of?
+      </span>
+      <p class="answer">Link: The Magnetometer ground penetrating effect. It is the most challenging
+        task, taking me more than 2 weeks to perfect. However, after all being working, I feel very
+        proud of it, especially seeing it is enabled by players.</p>
     </div>
     <div class="qa-item">
       <span class="question">How did your coach help you this season?</span>
-      <p class="answer">Link: </p>
+      <p class="answer">Link: Whenever I got stuck for long and AI Assistant or ChatGPT still
+        couldn't help. I reached to our coach. He could always provide me a right direction to
+        figure out issues and solutions by myself.</p>
     </div>
     <div class="qa-item">
-      <span class="question">How did you resolve any conflicts or disagreements that your team had?</span>
-      <p class="answer">Link: </p>
+      <span
+          class="question">How did you resolve any conflicts or disagreements that your team had?
+      </span>
+      <p class="answer">Link: We voted democratically and respected the final decision as described
+        in our <a href="index.html#design-process">Design Process</a></p>
     </div>
+    <div class="qa-item">
+      <span class="question">Describe the toughest challenge your team faced and how you overcame
+        it.</span>
+      <p class="answer">Link: Creating the ground penetrating effect using Magnetometer. The Roblox
+        AI Assistant couldn't provide a satisfying solution. In the end, I resorted to our mentor to
+        help sort out the working script. Here is an example iterate with AI, it was successful like
+        most of the time.
+        <img src="images/AI_Helped.png" alt="email" style="width: 100%; height: 100%;">
+      </p>
+    </div>
+
   </div>
 </div>
 <!--
@@ -159,18 +284,23 @@
   function openTab(evt, tabName) {
     let i, content, tablinks;
     content = document.getElementsByClassName("tab-content");
-    for (i = 0; i < content.length; i++) { content[i].classList.remove("active"); }
+    for (i = 0; i < content.length; i++) {
+      content[i].classList.remove("active");
+    }
     tablinks = document.getElementsByClassName("tab-btn");
-    for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
     document.getElementById(tabName).classList.add("active");
     evt.currentTarget.classList.add("active");
   }
+
   document.querySelectorAll('a').forEach(link => {
     // Option A: Apply to ALL links
     link.setAttribute('target', '_blank');
     link.setAttribute('rel', 'noopener noreferrer');
 
-    // Option B: Apply ONLY to external links (checks if domain is different)
+    // Option B: Apply ONLY to external links (checks if the domain is different)
     /*
     if (link.hostname !== window.location.hostname) {
       link.setAttribute('target', '_blank');
