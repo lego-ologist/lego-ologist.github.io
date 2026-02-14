@@ -1344,6 +1344,9 @@
 </div>
 
 <script>
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
   const tabs = document.querySelectorAll(".tab-btn");
   const tabIds = ["innovation", "game", "gamedev", "robotics", "event", "team"];
 
@@ -1454,11 +1457,15 @@
     }
   }
 
+  const content = document.querySelector("main.content");
   // Handle tab button clicks
   tabs.forEach(btn => {
     btn.addEventListener("click", () => {
       const target = btn.dataset.tab;
       activateTab(target);
+      if (content) {
+        content.scrollTop = 0;
+      }
     });
   });
 
